@@ -10,9 +10,11 @@ function vendorsJs() {
 }
 function app() {
     return gulp.src(config.paths.src.js)
+        .pipe($.babel({
+            presets: ['es2015']
+        }))
         .pipe($.ngAnnotate())
         .pipe($.angularEmbedTemplates())
-        .pipe($.babel())
         .pipe($.uglify())
         .pipe($.concat(config.packageName + '.min.js'))
         .pipe(gulp.dest(config.paths.dist.js));
@@ -27,13 +29,14 @@ function styles() {
 function watch(cb) {
     gulp.watch(config.paths.src.less, styles);
     gulp.watch(config.paths.src.js, app);
+    gulp.watch(config.paths.src.html, app);
 
     cb();
 }
 
 function serve(cb) {
     browserSync({
-        files: [config.paths.dist.js + '**.js', config.paths.dist.css + '**.css'],
+        files: [config.paths.dist.js + '**.js', config.paths.dist.css + '**.css', 'src/**.html'],
         server: {
             baseDir: '.'
         }

@@ -7,6 +7,9 @@
       "js": [
         "src/**/*.js"
       ],
+      "html": [
+        "src/**/*.html"
+      ],
       "media": [
         "src/media/**"
       ],

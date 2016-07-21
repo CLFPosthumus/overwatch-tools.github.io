@@ -1,3 +1,3 @@
-angular.module('overwatch-hero-picker').conponent('owHeroPicker',{
-    template: 'ow-hero-picker.html'
+angular.module('overwatch-hero-picker').component('owHeroPicker', {
+    templateUrl: 'ow-hero-picker.html'
 });
