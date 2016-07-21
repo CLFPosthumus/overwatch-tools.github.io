@@ -1,5 +1,6 @@
+<input type="search" ng-model="search" placeholder="find a hero by name, type or description">
 <ul>
-    <li ng-repeat="hero in $ctrl.heroes">
+    <li ng-repeat="hero in $ctrl.heroes |filter: search">
         <img ng-src="{{hero.avatar}}" />
         <h2>{{hero.name}}</h2>
         <p>{{hero.description}}</p>
