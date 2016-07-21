@@ -10,6 +10,7 @@ function vendorsJs() {
 }
 function app() {
     return gulp.src(config.paths.src.js)
+        .pipe($.plumber())
         .pipe($.babel({
             presets: ['es2015']
         }))
@@ -21,6 +22,10 @@ function app() {
 }
 function styles() {
     return gulp.src(config.paths.src.less)
+        .pipe($.plumber(function(err){
+            console.error(err);
+            this.emit('end');
+        }))
         .pipe($.less())
         .pipe($.cleanCss())
         .pipe($.concat(config.packageName + '.min.css'))
