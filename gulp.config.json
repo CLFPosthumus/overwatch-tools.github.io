@@ -1,6 +1,9 @@
 {
   "paths": {
     "src": {
+      "vendorJs": [
+        "node_modules/angular/angular.min.js"
+      ],
       "js": [
         "src/**/*.js"
       ],
