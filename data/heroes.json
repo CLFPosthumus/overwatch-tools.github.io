@@ -3,11 +3,131 @@
   "name": "Ana",
   "avatar" : "http://url-to-avatar.jpg",
   "type": "support",
-  "description": "pew pew sniper"
+  "description": "Female Snake"
 },{
   "id": "bas",
-  "name": "Bastillon",
+  "name": "Bastion",
   "avatar" : "http://url-to-avatar.jpg",
   "type": "defense",
-  "description": "pew pew machine gun"
+  "description": "Leftclick machine"
+}{
+  "id": "dva",
+  "name": "D-Va",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "tank",
+  "description": "Gamer chick"
+}{
+  "id": "gen",
+  "name": "Genji",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "offense",
+  "description": "Swordsman extraordinaire"
+}{
+  "id": "han",
+  "name": "Hanzo",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "defense",
+  "description": "Sake? Veeeeeeery good!"
+}{
+  "id": "jun",
+  "name": "Junkrat",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "defense",
+  "description": "BOOM"
+}{
+  "id": "luc",
+  "name": "Lucio",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "support",
+  "description": "Stuck in 90s"
+}{
+  "id": "mcc",
+  "name": "McCree",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "offense",
+  "description": "Where's Jolly Jumper?"
+}{
+  "id": "mei",
+  "name": "Mei",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "defense",
+  "description": "Cold hearted bitch"
+}{
+  "id": "mer",
+  "name": "Mercy",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "support",
+  "description": "Female Jesus"
+}{
+  "id": "pha",
+  "name": "Pharah",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "offense",
+  "description": "Jetpack lady"
+}{
+  "id": "rea",
+  "name": "Reaper",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "offense",
+  "description": "Dark hombre"
+}{
+  "id": "rei",
+  "name": "Reinhard",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "tank",
+  "description": "Too old for this shit"
+}{
+  "id": "roa",
+  "name": "Roadhog",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "tank",
+  "description": "What do you mean, fat?"
+}{
+  "id": "sol",
+  "name": "Soldier 76",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "offense",
+  "description": "Cyclop wannabe"
+}{
+  "id": "sym",
+  "name": "Symmetra",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "support",
+  "description": "Non-politically correct"
+}{
+  "id": "tor",
+  "name": "Torbjorn",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "defense",
+  "description": "Totally not engineer"
+}{
+  "id": "tra",
+  "name": "Tracer",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "offense",
+  "description": "Blinkablink!"
+}{
+  "id": "wid",
+  "name": "Widowmaker",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "defense",
+  "description": "Spawn camper"
+}{
+  "id": "win",
+  "name": "Winston",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "tank",
+  "description": "Beast wannabe"
+}{
+  "id": "zar",
+  "name": "Zarya",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "tank",
+  "description": "Taste the rainbow"
+{
+  "id": "zen",
+  "name": "Zenyatta",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "support",
+  "description": "LOLSupport"
 }]
