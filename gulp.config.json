@@ -1,0 +1,22 @@
+{
+  "paths": {
+    "src": {
+      "js": [
+        "src/**/*.js"
+      ],
+      "media": [
+        "src/media/**"
+      ],
+      "less": [
+        "src/**/index.less"
+      ]
+    },
+    "dist": {
+      "index": "index.html",
+      "js": "dist/js/",
+      "css": "dist/css/",
+      "media": "dist/media"
+    }
+  },
+  "packageName": "overwatch-picker"
+}

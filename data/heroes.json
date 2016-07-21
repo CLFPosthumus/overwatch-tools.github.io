@@ -1,0 +1,13 @@
+[{
+  "id": "ana",
+  "name": "Ana",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "support",
+  "description": "pew pew sniper"
+},{
+  "id": "bas",
+  "name": "Bastillon",
+  "avatar" : "http://url-to-avatar.jpg",
+  "type": "defense",
+  "description": "pew pew machine gun"
+}]
