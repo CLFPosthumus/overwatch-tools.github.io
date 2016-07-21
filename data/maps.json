@@ -1,0 +1,85 @@
+[{
+  "id": "gibof",
+  "name": "Gibraltar - Offense",
+  "type": "Escort",
+},{
+  "id": "gibdef",
+  "name": "Gibraltar - Defense",
+  "type": "Escort",
+}{
+  "id": "dorof",
+  "name": "Dorado - Offense",
+  "type": "Escort",
+}{
+  "id": "dordef",
+  "name": "Dorado - Defense",
+  "type": "Escort",
+}{
+  "id": "rouof",
+  "name": "Route 66 - Offense",
+  "type": "Escort",
+}{
+  "id": "roudef",
+  "name": "Route 66 - Defense",
+  "type": "Escort",
+}{
+  "id": "anuof",
+  "name": "Temple of Anubis - Offense",
+  "type": "Assault",
+}{
+  "id": "anudef",
+  "name": "Temple of Anubis - Defense",
+  "type": "Assault",
+}{
+  "id": "hanof",
+  "name": "Anamura - Offense",
+  "type": "Assault",
+}{
+  "id": "handef",
+  "name": "Hanamura - Defense",
+  "type": "Assault",
+}{
+  "id": "volof",
+  "name": "Volskaya - Offense",
+  "type": "Assault",
+}{
+  "id": "voldef",
+  "name": "Volskaya - Defense",
+  "type": "Assault",
+}{
+  "id": "kinof",
+  "name": "King's Row - Offense",
+  "type": "Hybrid",
+}{
+  "id": "kindef",
+  "name": "King's Row - Defense",
+  "type": "Hybrid",
+}{
+  "id": "numof",
+  "name": "Numbani - Offense",
+  "type": "Hybrid",
+}{
+  "id": "numdef",
+  "name": "Numbani - Defense",
+  "type": "Hybrid",
+}{
+  "id": "holof",
+  "name": "Hollywood - Offense",
+  "type": "Hybrid",
+}{
+  "id": "holdef",
+  "name": "Hollywood - Defense",
+  "type": "Hybrid",
+}{
+  "id": "lij",
+  "name": Lijiang",
+  "type": "KOTH",
+}{
+  "id": "nep",
+  "name": "Nepal",
+  "type": "KOTH",
+}{
+  "id": "ill",
+  "name": "Illios",
+  "type": "KOTH"
+}]
