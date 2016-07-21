@@ -1,1 +1,11 @@
-<ow-hero-list></ow-hero-list>
+<ow-hero-list on-hero-selected="$ctrl.onHeroSelected(hero)"></ow-hero-list>
+<div class="selected-heroes">
+    <h2>Selected Heroes</h2>
+    <ul >
+        <li ng-repeat="hero in $ctrl.selectedHeroes track by $index">
+            <img ng-src="{{hero.avatar}}" />
+            <button ng-click="$ctrl.removeSelectedHero($index)">remove</button>
+        </li>
+    </ul>
+</div>
+

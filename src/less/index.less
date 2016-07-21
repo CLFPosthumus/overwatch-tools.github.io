@@ -5,32 +5,78 @@ body, html {
 }
 
 ow-hero-list {
+    float:left;
+    width:30vw;
+    display: block;
     h2{
-        font-size:1.3vw;
+        font-size:.8vw;
         white-space: nowrap;
     }
+    ul{
+        margin:0;
+        padding:0;
+
+        &::after{
+            content:"";
+            display: table;
+            clear: both;
+        }
+    }
     li {
-        height: 24vw;
         list-style-type: none;
         margin: 0 ;
         padding: 0.5rem;
         box-sizing: border-box;
         float: left;
-        width: 10vw;
+        width: 7vw;
+        a {
+            display: block;
+            text-decoration: none;
+            color:white;
+        }
         img{
             max-width:100%;
+
         }
-        p{
-            font-size: 1.10vw;
+        .details{
+            height: 8vw;
+            p{
+                font-size: .8vw;
+            }
         }
+
     }
     input[type="search"]{
-        min-width:30rem;
+        width:100%;
     }
     button{
         background: transparent;
+        margin:0;
+        padding:0;
         border:none;
         color:white;
         text-align: left;
+    }
+}
+.selected-heroes{
+    float: left;
+    width: 67vw;
+    box-sizing:border-box;
+    padding-left:3vw;
+    h2 {
+        margin-top:0;
+    }
+    img{
+        max-width:4vw;
+        display: block;
+    }
+    ul,li{
+        padding:0;
+        margin:0;
+        list-style-type: none;
+    }
+    li{
+        float: left;
+        padding-left:10px;
     }
 }

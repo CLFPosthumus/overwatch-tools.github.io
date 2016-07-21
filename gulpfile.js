@@ -14,9 +14,9 @@ function app() {
         .pipe($.babel({
             presets: ['es2015']
         }))
-        .pipe($.ngAnnotate())
+        //.pipe($.ngAnnotate())
         .pipe($.angularEmbedTemplates())
-        .pipe($.uglify())
+        //.pipe($.uglify())
         .pipe($.concat(config.packageName + '.min.js'))
         .pipe(gulp.dest(config.paths.dist.js));
 }

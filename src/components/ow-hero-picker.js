@@ -6,5 +6,9 @@ angular.module('overwatch-hero-picker').component('owHeroPicker', {
         this.onHeroSelected = hero => {
             this.selectedHeroes.push(hero);
         };
+
+        this.removeSelectedHero = index => {
+            this.selectedHeroes.splice(index, 1);
+        };
     }
 });
