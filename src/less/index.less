@@ -1,5 +1,5 @@
 @linkColor: rgb(0, 150, 255);
-
+@enemyColor: rgb(200, 50, 50);
 body, html {
     font-size: 85%;
     padding:0;
@@ -49,6 +49,7 @@ ow-hero-list {
         padding: 1rem;
         position: absolute;
         left:0;
+        width: 100%;
         &::after {
             content: "";
             display: table;
@@ -81,7 +82,10 @@ ow-hero-list {
             }
         }
         &.selected{
-            border: 2px solid @linkColor;
+            border: 2px solid @enemyColor;
+        }
+        &.disabled{
+            opacity:.4;
         }
 
     }

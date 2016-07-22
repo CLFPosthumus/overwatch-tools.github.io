@@ -18,7 +18,8 @@ function app() {
         .pipe($.angularEmbedTemplates())
         //.pipe($.uglify())
         .pipe($.concat(config.packageName + '.min.js'))
-        .pipe(gulp.dest(config.paths.dist.js));
+        .pipe(gulp.dest(config.paths.dist.js))
+        .pipe(browserSync.stream());
 }
 function styles() {
     return gulp.src(config.paths.src.less)
@@ -41,7 +42,7 @@ function watch(cb) {
 
 function serve(cb) {
     browserSync({
-        files: [config.paths.dist.js + '**.js', config.paths.dist.css + '**.css', 'src/**.html'],
+        files: [config.paths.dist.css],
         server: {
             baseDir: '.'
         }
