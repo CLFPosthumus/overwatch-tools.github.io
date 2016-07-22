@@ -6,7 +6,6 @@ angular.module('overwatch-hero-picker').component('owHeroList', {
     controller: function ($http, $document, $scope) {
         let checkMaxReached = () => {
             this.maxReached = Object.keys(this.selectedHeroes).length === 6;
-            debugger;
         };
 
         $http.get('data/heroes.json').then(response => this.heroes = response.data);
@@ -25,11 +24,14 @@ angular.module('overwatch-hero-picker').component('owHeroList', {
             }
 
             checkMaxReached();
+
             if (this.maxReached) {
                 this.focused = false;
             }
 
         };
+
+        $scope.$watch('$ctrl.focused', checkMaxReached);
 
         $document.on('keyup', (event) => {
             if (event.keyCode === 27) {
