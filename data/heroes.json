@@ -12,7 +12,7 @@
     "name": "Bastion",
     "avatar": "https://blzgdapipro-a.akamaihd.net/game/heroes/0x02E0000000000015.png",
     "type": "defense",
-    "difficulty": 1
+    "difficulty": 1,
     "description": "Leftclick machine"
   },
   {

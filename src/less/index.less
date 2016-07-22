@@ -1,82 +1,148 @@
+@linkColor: rgb(0, 150, 255);
+
 body, html {
+    font-size: 85%;
+    padding:0;
+    margin:0;
     background: black;
     font-family: Verdana, Arial, sans-serif;
     color: white;
 }
+body{
+    padding: 1rem;
+}
+a {
+    color: @linkColor;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, .5);
+    ul, li {
+        margin: 0;
+        text-align: center;
+    }
+    li {
+        list-style-type: none;
+        display: inline-block;
+        padding-right: 2rem;
+    }
+}
 
 ow-hero-list {
-    float:left;
-    width:68vw;
     display: block;
-    h2{
-        font-size:.8vw;
+    .hero-name {
+        font-size: 1vw;
         white-space: nowrap;
+        background: rgba(0, 30, 75, .6);
+        text-shadow: 1px 1px black;
+        padding: 0.5vw 0.2vw;
     }
-    ul{
-        margin:0;
-        padding:0;
-
-        &::after{
-            content:"";
+    ul {
+        background: black;
+        margin: 0;
+        padding: 1rem;
+        position: absolute;
+        left:0;
+        &::after {
+            content: "";
             display: table;
             clear: both;
         }
     }
     li {
         list-style-type: none;
-        margin: 0 ;
+        margin: 0;
         padding: 0.5rem;
         box-sizing: border-box;
         float: left;
-        width: 9vw;
+        width: 11vw;
+        position: relative;
         a {
             display: block;
             text-decoration: none;
-            color:white;
+            color: white;
         }
-        img{
-            max-width:100%;
-
+        img {
+            max-width: 100%;
         }
-        .details{
-            height: 8vw;
-            p{
-                font-size: .8vw;
+        .hero-detail-wrapper {
+            position: absolute;
+            bottom: 0;
+            overflow: hidden;
+            .hero-detail {
+                height: 0;
+                font-size: 1vw;
             }
         }
+        &.selected{
+            border: 2px solid @linkColor;
+        }
 
     }
-    input[type="search"]{
-        width:100%;
+    input[type="search"] {
+        width: calc(100% - 2rem);
     }
-    button{
+    button {
         background: transparent;
-        margin:0;
-        padding:0;
-        border:none;
-        color:white;
+        margin: 0;
+        padding: 0;
+        border: none;
+        color: white;
         text-align: left;
     }
 }
-.selected-heroes{
-    float: left;
-    width: 25vw;
-    box-sizing:border-box;
-    padding-left:3vw;
-    h2 {
-        margin-top:0;
+
+.selected-heroes {
+    box-sizing: border-box;
+    .hero-name {
+        margin-top: 0;
     }
-    img{
-        max-width:4vw;
+    img {
+        max-width: 4vw;
         display: block;
     }
-    ul,li{
-        padding:0;
-        margin:0;
+    ul, li {
+        padding: 0;
+        margin: 0;
         list-style-type: none;
     }
-    li{
+    li {
         float: left;
-        padding-left:10px;
+        padding-left: 10px;
     }
 }
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+
+}
+
+@media screen and (orientation:landscape) {
+    ow-hero-list{
+        li{
+            width:8vw;
+        }
+        .hero-name {
+            display: none;
+        }
+    }
+}
+@media screen and (orientation:portrait) {
+    ow-hero-list{
+        li{
+            width:15vw;
+        }
+        .hero-name {
+            display: none;
+        }
+    }
+}
+
