@@ -1,24 +1,33 @@
+@import 'mixins';
+
 @linkColor: rgb(0, 150, 255);
 @enemyColor: rgb(200, 50, 50);
+@opponentListSize: 20vw;
+
 body, html {
     font-size: 85%;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
     background: black;
     font-family: Verdana, Arial, sans-serif;
     color: white;
-    line-height:1.2rem;
+    line-height: 1.2rem;
 }
-body{
+
+body {
     padding: 1rem;
 }
-small{
-    font-size:0.75rem;
+
+small {
+    font-size: 0.75rem;
 }
+
 a {
     color: @linkColor;
 }
-
+main{
+    margin-left: @opponentListSize + 1;
+}
 footer {
     position: fixed;
     bottom: 0;
@@ -40,20 +49,22 @@ footer {
 
 ow-hero-list {
     display: block;
+
+    width:@opponentListSize;
+    position: absolute;
+    top:0;
+    left:0;
     .hero-name {
+        display: block;
         font-size: 1vw;
         white-space: nowrap;
-        background: rgba(0, 30, 75, .6);
+        //background: rgba(0, 30, 75, .6);
         text-shadow: 1px 1px black;
         padding: 0.5vw 0.2vw;
     }
     ul {
-        background: black;
         margin: 0;
         padding: 1rem;
-        position: absolute;
-        left:0;
-        width: 100%;
         &::after {
             content: "";
             display: table;
@@ -63,35 +74,32 @@ ow-hero-list {
     li {
         list-style-type: none;
         margin: 0;
-        padding: 0.5rem;
+        padding:0;
         box-sizing: border-box;
-        float: left;
-        width: 11vw;
+        height: 90vh/22;
         position: relative;
         a {
             display: block;
             text-decoration: none;
             color: white;
+            height:100%
         }
         img {
-            max-width: 100%;
+            float:left;
+            height: inherit;
+            vertical-align: middle;
         }
         .hero-detail-wrapper {
-            position: absolute;
-            bottom: 0;
-            overflow: hidden;
-            .hero-detail {
-                height: 0;
-                font-size: 1vw;
-            }
+            display: inline-block;
+            padding-left:1rem;
+            vertical-align: middle;
         }
-        &.selected{
-            border: 2px solid @enemyColor;
+        &.selected {
+            #gradient.horizontal(@enemyColor, transparent);
         }
-        &.disabled{
-            opacity:.4;
+        &.disabled {
+            opacity: .4;
         }
-
     }
     input[type="search"] {
         width: calc(100% - 2rem);
@@ -132,25 +140,56 @@ ow-hero-list {
     clear: both;
 
 }
+//
+//@media screen and (orientation: landscape) {
+//    ow-hero-list {
+//        li {
+//            width: 8vw;
+//        }
+//    }
+//}
+//
+//@media screen and (orientation: portrait) {
+//    ow-hero-list {
+//        li {
+//            width: 15vw;
+//        }
+//        .hero-name {
+//            display: none;
+//        }
+//    }
+//}
 
-@media screen and (orientation:landscape) {
-    ow-hero-list{
-        li{
-            width:8vw;
+.recommendation {
+    ul, li {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style-type: none;
+        float: left;
+        position: relative;
+        width:9vw;
+        padding:.5vw;
+        img{
+            max-width:100%;
         }
-        .hero-name {
-            display: none;
+        .score{
+            font-size:5vw;
+            color:@linkColor;
+            position: absolute;
+            top:5%;
+            right:5%;
+
+            text-shadow: 2px 2px 0 black;
+        }
+    }
+
+    .avoid{
+        li{
+            .score{
+                color:@enemyColor;
+            }
         }
     }
 }
-@media screen and (orientation:portrait) {
-    ow-hero-list{
-        li{
-            width:15vw;
-        }
-        .hero-name {
-            display: none;
-        }
-    }
-}
-

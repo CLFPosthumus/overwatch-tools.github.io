@@ -11,6 +11,7 @@ function vendorsJs() {
 function app() {
     return gulp.src(config.paths.src.js)
         .pipe($.plumber())
+        .pipe($.eslint())
         .pipe($.babel({
             presets: ['es2015']
         }))
@@ -19,7 +20,6 @@ function app() {
         //.pipe($.uglify())
         .pipe($.concat(config.packageName + '.min.js'))
         .pipe(gulp.dest(config.paths.dist.js))
-        .pipe(browserSync.stream());
 }
 function styles() {
     return gulp.src(config.paths.src.less)

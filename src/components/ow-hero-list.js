@@ -3,12 +3,14 @@ angular.module('overwatch-hero-picker').component('owHeroList', {
         selectedHeroes: '='
     },
     templateUrl: 'ow-hero-list.html',
-    controller: function ($http, $document, $scope) {
+    controller: function (HeroesService, $document, $scope) {
         let checkMaxReached = () => {
             this.maxReached = Object.keys(this.selectedHeroes).length === 6;
         };
 
-        $http.get('data/heroes.json').then(response => this.heroes = response.data);
+        HeroesService.getHeroes().then(heroes => {
+            this.heroes = heroes;
+        });
 
         this.focused = true;
         this.selectedHeroes = {};
@@ -19,7 +21,7 @@ angular.module('overwatch-hero-picker').component('owHeroList', {
 
             if (angular.isDefined(this.selectedHeroes[hero.id])) {
                 delete this.selectedHeroes[hero.id];
-            } else if (!this.maxReached){
+            } else if (!this.maxReached) {
                 this.selectedHeroes[hero.id] = hero;
             }
 

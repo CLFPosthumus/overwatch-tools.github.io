@@ -1,11 +1,23 @@
-<ow-hero-list selected-heroes="$ctrl.selectedHeroes"></ow-hero-list>
-<div class="selected-heroes">
-    <h2>You are countering:</h2>
-    <ul>
-        <li ng-repeat="hero in $ctrl.selectedHeroes">
-            <img ng-src="{{hero.avatar}}" />
-            <button ng-click="$ctrl.removeSelectedHero(hero.id)">remove</button>
-        </li>
-    </ul>
-</div>
+
+<main class="content">
+    <ow-hero-list selected-heroes="$ctrl.selectedHeroes"></ow-hero-list>
+    <h2>Who do you want to counter? <small>(choose 1 to 6)</small></h2>
+    <div class="recommendation" ng-show="$ctrl.heroesList.length">
+        <h2>You should pick: </h2>
+        <ul class="recommended clearfix">
+            <li ng-repeat="hero in $ctrl.heroesList | filter: $ctrl.recommendedFilter">
+                <img ng-src="{{hero.avatar}}" />
+                <div class="score">{{$ctrl.abs($ctrl.heroCounterScore[hero.id])}}</div>
+            </li>
+        </ul>
+        <h2>And Avoid picking: </h2>
+        <ul class="avoid clearfix">
+            <li ng-repeat="hero in $ctrl.heroesList |  filter: $ctrl.avoidFilter">
+                <img ng-src="{{hero.avatar}}" />
+                <div class="score">{{$ctrl.heroCounterScore[hero.id]}}</div>
+            </li>
+        </ul>
+    </div>
+</main>
+
 

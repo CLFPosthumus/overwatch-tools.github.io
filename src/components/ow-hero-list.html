@@ -1,9 +1,8 @@
-<input type="search"
-       ng-model="search"
-       ng-focus="$ctrl.focused = true"
-       placeholder="find a hero by name, type or description">
-<button ng-click="$ctrl.focused = false">X</button>
-<ul class="list" ng-show="$ctrl.focused">
+<!--<input type="search"-->
+       <!--ng-model="search"-->
+       <!--placeholder="find a hero by name, type or description">-->
+
+<ul class="list">
     <li ng-repeat="hero in $ctrl.heroes | filter: search | orderBy: 'type'" ng-class="{
     'selected': $ctrl.selectedHeroes[hero.id],
     'disabled' : !$ctrl.selectedHeroes[hero.id] && $ctrl.maxReached
@@ -11,10 +10,10 @@
         <a ng-click="$ctrl.selectHero(hero)" href="javscript:void()">
             <img ng-src="{{hero.avatar}}"/>
             <div class="hero-detail-wrapper">
-                <h2 class="hero-name">{{hero.name}}</h2>
-                <div class="hero-detail">
-                    <p>{{hero.type}}: {{hero.description}}</p>
-                </div>
+                <span class="hero-name">{{hero.name}}</span>
+                <!--<div class="hero-detail">-->
+                    <!--<p>{{hero.type}}: {{hero.description}}</p>-->
+                <!--</div>-->
             </div>
         </a>
     </li>
