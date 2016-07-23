@@ -26,7 +26,7 @@ angular.module('overwatch-hero-picker').service('HeroPickerService', function ($
                     recommendedByMap[pickHeroId] = 0;
                 }
                 finalRating[pickHeroId] =
-                    recommendedCounterByHero[pickHeroId] + recommendedByMap[pickHeroId] * nbOpponent * .4;
+                    recommendedCounterByHero[pickHeroId] * -1 + recommendedByMap[pickHeroId] * nbOpponent * .4;
             }
         }
 
