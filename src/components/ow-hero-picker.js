@@ -3,33 +3,38 @@ angular.module('overwatch-hero-picker').component('owHeroPicker', {
     controller: function ($q, $scope, HeroesService, HeroPickerService) {
         this.selectedHeroes = [];
         this.heroesList = [];
+        this.selectedMap = null;
 
+        $scope.$watch('$ctrl.selectedMap', (value) => {
+            if (angular.isDefined(value)){
+                this.getRecommendedHero();
+            }
+        });
 
         $scope.$watchCollection('$ctrl.selectedHeroes', (value) => {
-            //debugger;
-            if (value && Object.keys(value).length > 0) {
+            if (value) {
                 this.getRecommendedHero();
-            } else {
-                this.heroesList.length = 0;
             }
         });
 
         this.getRecommendedHero = () => {
             return $q.all({
-                recommendedCounterScore: HeroPickerService.getRecommendedHero(this.selectedHeroes),
+                ratings: HeroPickerService.getRecommendedHero(this.selectedHeroes, this.selectedMap),
                 heroesList: HeroesService.getHeroes()
             }).then(r => {
-                this.heroCounterScore = r.recommendedCounterScore;
+                this.heroFinalScore = r.ratings.finalRating;
+                this.heroCounterScore = r.ratings.heroCounterRating;
+                this.heroMapScore = r.ratings.heroMapRating;
+
                 this.heroesList = r.heroesList.sort(function (heroA, heroB) {
-                    return r.recommendedCounterScore[heroA.id] - r.recommendedCounterScore[heroB.id];
+                    return r.ratings.finalRating[heroA.id] - r.ratings.finalRating[heroB.id];
                 });
             });
         };
 
-        this.abs = Math.abs;
         this.recommendedFilter = hero => {
-            return this.heroCounterScore[hero.id] <= 0;
+            return this.heroFinalScore[hero.id] <= 0;
         };
-        this.avoidFilter = hero => this.heroCounterScore[hero.id] > 0;
+        this.avoidFilter = hero => this.heroFinalScore[hero.id] > 0;
     }
 });

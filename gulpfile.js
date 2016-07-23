@@ -28,7 +28,7 @@ function styles() {
             this.emit('end');
         }))
         .pipe($.less())
-        .pipe($.cleanCss())
+        //.pipe($.cleanCss())
         .pipe($.concat(config.packageName + '.min.css'))
         .pipe(gulp.dest(config.paths.dist.css));
 }
@@ -42,7 +42,7 @@ function watch(cb) {
 
 function serve(cb) {
     browserSync({
-        files: [config.paths.dist.css],
+        files: [config.paths.dist.css, config.paths.dist.js],
         server: {
             baseDir: '.'
         }

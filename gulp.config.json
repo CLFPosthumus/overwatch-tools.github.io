@@ -5,6 +5,7 @@
         "node_modules/angular/angular.min.js"
       ],
       "js": [
+        "src/**/module.js",
         "src/**/*.js"
       ],
       "html": [
