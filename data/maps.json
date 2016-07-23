@@ -1,128 +1,149 @@
 [
   {
     "id": "gibof",
-    "name": "Gibraltar - Offense",
+    "name": "Gibraltar",
     "type": "Escort",
+    "mode": "O",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/gibraltar-thumb.jpg"
   },
   {
     "id": "gibdef",
-    "name": "Gibraltar - Defense",
+    "name": "Gibraltar",
     "type": "Escort",
+    "mode": "D",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/gibraltar-thumb.jpg"
   },
   {
     "id": "dorof",
-    "name": "Dorado - Offense",
+    "name": "Dorado",
     "type": "Escort",
+    "mode": "O",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/dorado-thumb.jpg"
   },
   {
     "id": "dordef",
-    "name": "Dorado - Defense",
+    "name": "Dorado",
     "type": "Escort",
+    "mode": "D",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/dorado-thumb.jpg"
   },
   {
     "id": "rouof",
-    "name": "Route 66 - Offense",
+    "name": "Route 66",
     "type": "Escort",
+    "mode": "O",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/route-66-thumb.jpg"
   },
   {
     "id": "roudef",
-    "name": "Route 66 - Defense",
+    "name": "Route 66",
     "type": "Escort",
+    "mode": "D",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/route-66-thumb.jpg"
   },
   {
     "id": "anuof",
-    "name": "Temple of Anubis - Offense",
+    "name": "Temple of Anubis",
     "type": "Assault",
+    "mode": "O",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/temple-of-anubis-thumb.jpg"
   },
   {
     "id": "anudef",
-    "name": "Temple of Anubis - Defense",
+    "name": "Temple of Anubis",
     "type": "Assault",
+    "mode": "D",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/temple-of-anubis-thumb.jpg"
   },
   {
     "id": "hanof",
-    "name": "Anamura - Offense",
+    "name": "Hanamura",
     "type": "Assault",
+    "mode": "O",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/hanamura-thumb.jpg"
   },
   {
     "id": "handef",
-    "name": "Hanamura - Defense",
+    "name": "Hanamura",
     "type": "Assault",
+    "mode": "D",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/hanamura-thumb.jpg"
   },
   {
     "id": "volof",
-    "name": "Volskaya - Offense",
+    "name": "Volskaya",
     "type": "Assault",
+    "mode": "O",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/volskaya-thumb.jpg"
   },
   {
     "id": "voldef",
-    "name": "Volskaya - Defense",
+    "name": "Volskaya",
     "type": "Assault",
+    "mode": "O",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/volskaya-thumb.jpg"
   },
   {
     "id": "kinof",
-    "name": "King's Row - Offense",
+    "name": "King's Row",
     "type": "Hybrid",
+    "mode": "O",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/kings-row-thumb.jpg"
   },
   {
     "id": "kindef",
-    "name": "King's Row - Defense",
+    "name": "King's Row",
     "type": "Hybrid",
+    "mode": "D",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/kings-row-thumb.jpg"
   },
   {
     "id": "numof",
-    "name": "Numbani - Offense",
+    "name": "Numbani",
     "type": "Hybrid",
+    "mode": "O",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/numbani-thumb.jpg"
   },
   {
     "id": "numdef",
-    "name": "Numbani - Defense",
+    "name": "Numbani",
     "type": "Hybrid",
+    "mode": "D",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/numbani-thumb.jpg"
   },
   {
     "id": "holof",
-    "name": "Hollywood - Offense",
+    "name": "Hollywood",
     "type": "Hybrid",
+    "mode": "O",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/hollywood-thumb.jpg"
   },
   {
     "id": "holdef",
-    "name": "Hollywood - Defense",
+    "name": "Hollywood",
     "type": "Hybrid",
+    "mode": "D",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/hollywood-thumb.jpg"
   },
   {
     "id": "lij",
     "name": "Lijiang",
     "type": "KOTH",
+    "mode": "KOTH",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/lijiang-thumb.jpg"
   },
   {
     "id": "nep",
     "name": "Nepal",
     "type": "KOTH",
+    "mode": "KOTH",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/nepal-thumb.jpg"
   },
   {
     "id": "ill",
     "name": "Illios",
     "type": "KOTH",
+    "mode": "KOTH",
     "image": "https://blzgdapipro-a.akamaihd.net/images/pages/game/maps-section/ilios-thumb.jpg"
   }
 ]
