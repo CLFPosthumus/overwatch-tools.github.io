@@ -1,4 +1,4 @@
-# paquettea.github.io
+# overwatch-tools.github.io
 Home page for Overwatch team matching
 
 trello board
