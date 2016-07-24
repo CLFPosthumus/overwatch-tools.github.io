@@ -1,8 +1,9 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var packageJSON =require('./package.json');
 var config = require('./gulp.config.json');
 var browserSync = require('browser-sync');
-var babel = require('gulp-babel');
+
 
 function vendorsJs() {
     return gulp.src(config.paths.src.vendorJs)
@@ -13,14 +14,14 @@ function app() {
     return gulp.src(config.paths.src.js)
         .pipe($.plumber())
        // .pipe($.eslint())
-        .pipe(babel({
+        .pipe($.babel({
             presets: ['es2015']
         }))
         //.pipe($.ngAnnotate())
         .pipe($.angularEmbedTemplates())
         //.pipe($.uglify())
         .pipe($.concat(config.packageName + '.min.js'))
-        .pipe(gulp.dest(config.paths.dist.js))
+        .pipe(gulp.dest(config.paths.dist.js));
 }
 function styles() {
     return gulp.src(config.paths.src.less)
@@ -36,8 +37,16 @@ function styles() {
 function watch(cb) {
     gulp.watch(config.paths.src.less, styles);
     gulp.watch([].concat(config.paths.src.html).concat(config.paths.src.js), app);
-
+    gulp.watch(config.paths.src.index, buildIndexHtml());
     cb();
+}
+function buildIndexHtml(){
+    return gulp.src(config.paths.src.index)
+        .pipe($.template({
+            version: packageJSON.version
+        }))
+        .pipe(gulp.dest(config.paths.dist.index));
+
 }
 
 function serve(cb) {
@@ -49,4 +58,5 @@ function serve(cb) {
     });
     cb();
 }
-gulp.task('default', gulp.series(vendorsJs, app, styles, watch, serve));
+gulp.task('default', gulp.series(vendorsJs, app, styles, buildIndexHtml, watch, serve));
+

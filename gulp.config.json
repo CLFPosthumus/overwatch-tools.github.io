@@ -16,10 +16,11 @@
       ],
       "less": [
         "src/**/index.less"
-      ]
+      ],
+      "index": "src/index.html"
     },
     "dist": {
-      "index": "index.html",
+      "index": ".",
       "js": "dist/js/",
       "css": "dist/css/",
       "media": "dist/media"
