@@ -1,4 +1,4 @@
-<div class="score">
+<div class="score" ng-class="{'negative' : $ctrl.final < 0}">
     {{$ctrl.final | number:1 }}
     <small>(C)&nbsp;{{ $ctrl.counter| number: 1 }}</small>
     <small>(M)&nbsp;{{ $ctrl.map| number: 1 }}</small>

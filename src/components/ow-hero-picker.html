@@ -3,7 +3,7 @@
     <ow-map-list selected-map="$ctrl.selectedMap"></ow-map-list>
     <div class="recommendation" ng-show="$ctrl.heroesList.length ">
         <ul class="recommended clearfix">
-            <li ng-repeat="hero in $ctrl.heroesList | filter: $ctrl.recommendedFilter | limitTo:12 ">
+            <li ng-repeat="hero in $ctrl.heroesList | filter: $ctrl.recommendedFilter | limitTo: $ctrl.heroLimit ">
                 <img ng-src="{{ hero.avatar }}" />
                 <ow-hero-picker-score
                         final="$ctrl.heroFinalScore[hero.id]"
@@ -11,8 +11,9 @@
                         map="$ctrl.heroMapScore[hero.id]"></ow-hero-picker-score>
             </li>
         </ul>
-
+        <button ng-click="$ctrl.heroLimit = null" ng-show="$ctrl.heroLimit !== null">View all ratings</button>
     </div>
+
     <button class="hamburger" ng-click="asideOpen = !asideOpen">Player settings</button>
     <aside ng-class="{open : asideOpen}">
         <ow-player-hero-rating heroes-rating="$ctrl.heroesRating" ></ow-player-hero-rating>

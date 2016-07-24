@@ -177,7 +177,7 @@ footer li {
   display: block;
   padding-top: .25rem;
 }
-.recommendation .avoid li .score {
+.recommendation li .score.negative {
   color: #d60a3f;
 }
 aside {

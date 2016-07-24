@@ -1,6 +1,6 @@
 {
   "name": "paquettea.github.io",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Home page for Overwatch team matching",
   "main": "index.html",
   "scripts": {
