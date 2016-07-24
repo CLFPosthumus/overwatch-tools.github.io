@@ -3,15 +3,14 @@
        <!--placeholder="find a hero by name, type or description">-->
 
 <ul class="list">
-    <li ng-repeat="map in $ctrl.maps | filter: search | orderBy: 'type'" ng-class="{
-    'selected': $ctrl.selectedMap === map.id,
+    <li ng-repeat="map in $ctrl.maps" class="{{'mode' + map.mode}}" ng-class="{
+    'selected': $ctrl.selectedMap === map,
     'disabled' : $ctrl.selectedMap !== null && map !== $ctrl.selectedMap
     }">
-        <a ng-click="$ctrl.selectMap(map)" href="javascript:void()">
+        <a ng-click="$ctrl.selectMap(map)" href="javascript:void();">
             <img ng-src="{{map.image}}"/>
             <div class="detail-wrapper">
                 <span class="name">{{map.name}}</span>
-
             </div>
         </a>
     </li>

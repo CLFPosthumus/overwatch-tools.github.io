@@ -3,6 +3,7 @@ angular.module('overwatch-hero-picker').component('owHeroPicker', {
     controller: function ($q, $scope, HeroesService, HeroPickerService) {
         this.selectedHeroes = [];
         this.heroesList = [];
+        this.heroesRating = {};
         this.selectedMap = null;
 
         $scope.$watch('$ctrl.selectedMap', (value) => {

@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var config = require('./gulp.config.json');
 var browserSync = require('browser-sync');
+var babel = require('gulp-babel');
 
 function vendorsJs() {
     return gulp.src(config.paths.src.vendorJs)
@@ -11,8 +12,8 @@ function vendorsJs() {
 function app() {
     return gulp.src(config.paths.src.js)
         .pipe($.plumber())
-        .pipe($.eslint())
-        .pipe($.babel({
+       // .pipe($.eslint())
+        .pipe(babel({
             presets: ['es2015']
         }))
         //.pipe($.ngAnnotate())
@@ -34,8 +35,7 @@ function styles() {
 }
 function watch(cb) {
     gulp.watch(config.paths.src.less, styles);
-    gulp.watch(config.paths.src.js, app);
-    gulp.watch(config.paths.src.html, app);
+    gulp.watch([].concat(config.paths.src.html).concat(config.paths.src.js), app);
 
     cb();
 }

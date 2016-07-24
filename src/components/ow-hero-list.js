@@ -1,9 +1,11 @@
 angular.module('overwatch-hero-picker').component('owHeroList', {
     bindings: {
-        selectedHeroes: '='
+        selectedHeroes: '=',
+        heroesRating: '='
     },
     templateUrl: 'ow-hero-list.html',
-    controller: function (HeroesService, $document, $scope) {
+
+    controller: function (HeroesService) {
         let checkMaxReached = () => {
             this.maxReached = Object.keys(this.selectedHeroes).length === 6;
         };
@@ -12,7 +14,26 @@ angular.module('overwatch-hero-picker').component('owHeroList', {
             this.heroes = heroes;
         });
 
-        this.focused = true;
+        // $scope.$watch('$ctrl.heroes', function(heroes) {
+        //
+        //     angular.forEach(heroes, (hero) => {
+        //
+        //         let heroScope = $scope.$new();
+        //
+        //         heroScope.hero = hero;
+        //         $timeout(function(){
+        //             $transclude(heroScope, function(clone, innerScope) {
+        //                 //clone is a copy of the transcluded DOM element content.
+        //                 console.log(clone);
+        //
+        //                 //append the transcluded element.
+        //                 $element.append($compile(clone)(innerScope));
+        //             });
+        //         },1000)
+        //
+        //     });
+        // });
+
         this.selectedHeroes = {};
 
         checkMaxReached();
@@ -27,20 +48,7 @@ angular.module('overwatch-hero-picker').component('owHeroList', {
 
             checkMaxReached();
 
-            if (this.maxReached) {
-                this.focused = false;
-            }
-
         };
 
-        $scope.$watch('$ctrl.focused', checkMaxReached);
-
-        $document.on('keyup', (event) => {
-            if (event.keyCode === 27) {
-                this.focused = false;
-                $scope.$apply();
-            }
-
-        });
     }
 });

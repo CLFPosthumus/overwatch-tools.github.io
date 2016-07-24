@@ -1,9 +1,11 @@
-@import 'mixins';
+@import "mixins";
+@import "scroll";
 
-@linkColor: rgb(0, 150, 255);
-@enemyColor: rgb(200, 50, 50);
-@opponentListSize: 12vw;
-@mapListSize: 20vw;
+@owBlue: #1cfbfc;
+@owRed: #d60a3f;
+@midPurple: #79839E;
+@opponentListSize: 25rem;
+@mapListSize: 35rem;
 
 body, html {
     font-size: 85%;
@@ -17,26 +19,26 @@ body, html {
 
 body {
     padding: 1rem 1rem 5rem;
-
 }
 
 small {
     font-size: 0.75rem;
 }
+
 ul, li {
     margin: 0;
     padding: 0;
 }
+
 a {
-    color: @linkColor;
+    color: @owBlue;
 }
-main{
-    margin-left: @opponentListSize + @mapListSize + 1;
-}
+
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
+    height: 8%;
     box-sizing: border-box;
     width: 100%;
     padding: 1rem;
@@ -53,15 +55,10 @@ footer {
 }
 
 .list {
-    display: block;
 
-    width:@opponentListSize;
-    position: absolute;
-    top:0;
-    left:0;
     .name {
         display: block;
-        font-size: 1vw;
+        font-size: 1rem;
         white-space: nowrap;
         //background: rgba(0, 30, 75, .6);
         text-shadow: 1px 1px black;
@@ -79,28 +76,30 @@ footer {
     li {
         list-style-type: none;
         margin: 0;
-        padding:0;
+        padding: 0;
         box-sizing: border-box;
-        height: 90vh/22;
+        height: 3rem;
+        width: 50%;
+        float: left;
         position: relative;
         a {
             display: block;
             text-decoration: none;
             color: white;
-            height:100%
+            height: 100%
         }
         img {
-            float:left;
+            float: left;
             height: inherit;
             vertical-align: middle;
         }
         .detail-wrapper {
             display: inline-block;
-            padding-left:1rem;
+            padding-left: 1rem;
             vertical-align: middle;
         }
         &.selected {
-            #gradient.horizontal(@enemyColor, transparent);
+            #gradient.horizontal(rgba(255,255,255,.2), transparent);
         }
         &.disabled {
             opacity: .4;
@@ -145,46 +144,138 @@ footer {
     clear: both;
 
 }
-ow-map-list{
-    .list{
-        width:@mapListSize;
-        left: @opponentListSize;
-        top: 0;
+
+ow-map-list {
+    .fixed;
+    width: @mapListSize;
+    left: @opponentListSize;
+
+    .modeO {
+        //#gradient.horizontal(@owRed, transparent);
+        a{
+            color: @owRed;
+        }
+    }
+    .modeD {
+        //#gradient.horizontal(@owBlue, transparent);
+        a{
+            color: @owBlue;
+        }
+    }
+    .modeKOTH {
+        //#gradient.horizontal(@midPurple, transparent);
+        a{
+            color: @midPurple;
+        }
     }
 
 }
 
+ow-hero-list {
+    display: block;
+}
+
+ow-hero-list.player-heroes {
+    width: @opponentListSize;
+
+    .list {
+        ow-player-hero-rating {
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+ow-hero-list {
+    width: @opponentListSize;
+}
+
+ow-hero-list.opponents {
+    .fixed;
+
+}
+
 .recommendation {
+    .fixed;
+    left: @opponentListSize + @mapListSize;
     li {
         list-style-type: none;
         float: left;
         position: relative;
-        width:9vw;
-        img{
-            max-width:100%;
+        width: 16.666666%;
+        img {
+            max-width: 100%;
             display: block;
         }
-        .score{
-            font-size:2vw;
-            color:@linkColor;
+        .score {
+            text-align: right;
+            font-size: 1rem;
+            color: @owBlue;
             position: absolute;
-            top:0;
-            right:5%;
+            top: 0;
+            right: 5%;
             text-shadow: 2px 2px 0 black;
             #gradient.vertical(black, transparent);
             padding: .5rem .5rem 1rem;
-            small{
+            small {
                 display: block;
-                padding-top:.25rem;
+                padding-top: .25rem;
             }
         }
     }
 
-    .avoid{
-        li{
-            .score{
-                color:@enemyColor;
+    .avoid {
+        li {
+            .score {
+                color: @owRed;
             }
         }
+    }
+}
+
+aside {
+    box-sizing: border-box;
+    padding: 1rem;
+    width: @opponentListSize;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    right: -@opponentListSize;
+    top: 0;
+    background-color: #333;
+    transition: right 350ms ease-in;
+
+    &.open {
+        right: 0;
+    }
+}
+
+.hamburger {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 2;
+}
+
+@media screen and (max-width: 1300px) {
+    .list {
+        li {
+            width: 100%;
+        }
+    }
+
+    .recommendation {
+        left: @opponentListSize/2 + @mapListSize/2;
+    }
+
+    ow-map-list {
+        width: @mapListSize/2;
+        left: @opponentListSize/2;
+
+    }
+
+    ow-hero-list {
+        width: @opponentListSize /2;
     }
 }

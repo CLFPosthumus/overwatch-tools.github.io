@@ -1,31 +1,22 @@
-
 <main class="content">
-    <ow-hero-list selected-heroes="$ctrl.selectedHeroes"></ow-hero-list>
+    <ow-hero-list class="opponents" selected-heroes="$ctrl.selectedHeroes"></ow-hero-list>
     <ow-map-list selected-map="$ctrl.selectedMap"></ow-map-list>
-    <h2>Who do you want to counter? <small>(choose 1 to 6)</small></h2>
-    <div class="recommendation" ng-show="$ctrl.heroesList.length">
-        <h2>You should pick: </h2>
+    <div class="recommendation" ng-show="$ctrl.heroesList.length ">
         <ul class="recommended clearfix">
-            <li ng-repeat="hero in $ctrl.heroesList | filter: $ctrl.recommendedFilter">
-                <img ng-src="{{hero.avatar}}" />
+            <li ng-repeat="hero in $ctrl.heroesList | filter: $ctrl.recommendedFilter | limitTo:12">
+                <img ng-src="{{ hero.avatar }}" />
                 <ow-hero-picker-score
                         final="$ctrl.heroFinalScore[hero.id]"
                         counter="$ctrl.heroCounterScore[hero.id]"
                         map="$ctrl.heroMapScore[hero.id]"></ow-hero-picker-score>
             </li>
         </ul>
-        <h2>And Avoid picking: </h2>
-        <ul class="avoid clearfix">
-            <li ng-repeat="hero in $ctrl.heroesList |  filter: $ctrl.avoidFilter">
-                <img ng-src="{{hero.avatar}}" />
-                <div class="score">{{$ctrl.heroFinalScore[hero.id] | number:1 }}</div>
-                <ow-hero-picker-score
-                        final="$ctrl.heroFinalScore[hero.id]"
-                        counter="$ctrl.heroCounterScore[hero.id]"
-                        map="$ctrl.heroMapScore[hero.id]"></ow-hero-picker-score>
-            </li>
-        </ul>
+
     </div>
+    <button class="hamburger" ng-click="asideOpen = !asideOpen">Player settings</button>
+    <aside ng-class="{open : asideOpen}">
+        <ow-hero-list selected-heroes="$ctrl.selectedHeroes"></ow-hero-list>
+    </aside>
 </main>
 
 

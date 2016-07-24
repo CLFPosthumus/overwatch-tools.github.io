@@ -1,3 +1,11 @@
+.fixed {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 92%;
+  top: 0;
+  left: 0;
+}
 body,
 html {
   font-size: 85%;
@@ -20,15 +28,13 @@ li {
   padding: 0;
 }
 a {
-  color: #0096ff;
-}
-main {
-  margin-left: 33vw;
+  color: #1cfbfc;
 }
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
+  height: 8%;
   box-sizing: border-box;
   width: 100%;
   padding: 1rem;
@@ -44,16 +50,9 @@ footer li {
   display: inline-block;
   padding-right: 2rem;
 }
-.list {
-  display: block;
-  width: 12vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 .list .name {
   display: block;
-  font-size: 1vw;
+  font-size: 1rem;
   white-space: nowrap;
   text-shadow: 1px 1px black;
   padding: 0.5vw 0.2vw;
@@ -72,7 +71,9 @@ footer li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 4.09090909vh;
+  height: 3rem;
+  width: 50%;
+  float: left;
   position: relative;
 }
 .list li a {
@@ -92,11 +93,11 @@ footer li {
   vertical-align: middle;
 }
 .list li.selected {
-  background-image: -webkit-linear-gradient(left, #c83232 0%, transparent 100%);
-  background-image: -o-linear-gradient(left, #c83232 0%, transparent 100%);
-  background-image: linear-gradient(to right, #c83232 0%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc83232', endColorstr='#00000000', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33ffffff', endColorstr='#00000000', GradientType=1);
 }
 .list li.disabled {
   opacity: .4;
@@ -137,24 +138,70 @@ footer li {
   display: block;
   clear: both;
 }
-ow-map-list .list {
-  width: 20vw;
-  left: 12vw;
+ow-map-list {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 92%;
   top: 0;
+  left: 0;
+  width: 35rem;
+  left: 25rem;
+}
+ow-map-list .modeO a {
+  color: #d60a3f;
+}
+ow-map-list .modeD a {
+  color: #1cfbfc;
+}
+ow-map-list .modeKOTH a {
+  color: #79839E;
+}
+ow-hero-list {
+  display: block;
+}
+ow-hero-list.player-heroes {
+  width: 25rem;
+}
+ow-hero-list.player-heroes .list ow-player-hero-rating {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+ow-hero-list {
+  width: 25rem;
+}
+ow-hero-list.opponents {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 92%;
+  top: 0;
+  left: 0;
+}
+.recommendation {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 92%;
+  top: 0;
+  left: 0;
+  left: 60rem;
 }
 .recommendation li {
   list-style-type: none;
   float: left;
   position: relative;
-  width: 9vw;
+  width: 16.666666%;
 }
 .recommendation li img {
   max-width: 100%;
   display: block;
 }
 .recommendation li .score {
-  font-size: 2vw;
-  color: #0096ff;
+  text-align: right;
+  font-size: 1rem;
+  color: #1cfbfc;
   position: absolute;
   top: 0;
   right: 5%;
@@ -171,5 +218,41 @@ ow-map-list .list {
   padding-top: .25rem;
 }
 .recommendation .avoid li .score {
-  color: #c83232;
+  color: #d60a3f;
+}
+aside {
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 25rem;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  right: -25rem;
+  top: 0;
+  background-color: #333;
+  transition: right 350ms ease-in;
+}
+aside.open {
+  right: 0;
+}
+.hamburger {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+@media screen and (max-width: 1300px) {
+  .list li {
+    width: 100%;
+  }
+  .recommendation {
+    left: 30rem;
+  }
+  ow-map-list {
+    width: 17.5rem;
+    left: 12.5rem;
+  }
+  ow-hero-list {
+    width: 12.5rem;
+  }
 }
