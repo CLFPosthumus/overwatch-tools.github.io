@@ -15,7 +15,7 @@
     </div>
     <button class="hamburger" ng-click="asideOpen = !asideOpen">Player settings</button>
     <aside ng-class="{open : asideOpen}">
-        <ow-hero-list selected-heroes="$ctrl.selectedHeroes"></ow-hero-list>
+        <ow-hero-list heroes-rating="$ctrl.heroesRating" ></ow-hero-list>
     </aside>
 </main>
 
