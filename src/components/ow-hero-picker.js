@@ -1,7 +1,7 @@
 angular.module('overwatch-hero-picker').component('owHeroPicker', {
     templateUrl: 'ow-hero-picker.html',
     controller: function ($q, $scope, HeroesService, HeroPickerService) {
-        this.selectedHeroes = [];
+        this.selectedHeroes = {};
         this.heroesList = [];
         this.heroesRating = {};
         this.selectedMap = null;
@@ -12,11 +12,11 @@ angular.module('overwatch-hero-picker').component('owHeroPicker', {
             }
         });
 
-        $scope.$watchCollection('$ctrl.selectedHeroes', (value) => {
+        $scope.$watch('$ctrl.selectedHeroes', (value) => {
             if (value) {
                 this.getRecommendedHero();
             }
-        });
+        }, true);
 
         this.getRecommendedHero = () => {
             return $q.all({
@@ -28,13 +28,13 @@ angular.module('overwatch-hero-picker').component('owHeroPicker', {
                 this.heroMapScore = r.ratings.heroMapRating;
 
                 this.heroesList = r.heroesList.sort(function (heroA, heroB) {
-                    return r.ratings.finalRating[heroA.id] - r.ratings.finalRating[heroB.id];
+                    return r.ratings.finalRating[heroB.id] - r.ratings.finalRating[heroA.id];
                 });
             });
         };
 
         this.recommendedFilter = hero => {
-            return this.heroFinalScore[hero.id] <= 0;
+            return this.heroFinalScore[hero.id] >= 0;
         };
         this.avoidFilter = hero => this.heroFinalScore[hero.id] > 0;
     }

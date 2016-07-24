@@ -7,11 +7,11 @@
     'selected': $ctrl.selectedMap === map,
     'disabled' : $ctrl.selectedMap !== null && map !== $ctrl.selectedMap
     }">
-        <a ng-click="$ctrl.selectMap(map)" href="javascript:void();">
+        <button ng-click="$ctrl.selectMap(map)" >
             <img ng-src="{{map.image}}"/>
             <div class="detail-wrapper">
                 <span class="name">{{map.name}}</span>
             </div>
-        </a>
+        </button>
     </li>
 </ul>

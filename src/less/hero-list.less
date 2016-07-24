@@ -1,0 +1,26 @@
+@import "variables";
+@import "mixins";
+
+ow-hero-list {
+    display: block;
+}
+
+ow-hero-list.player-heroes {
+    width: @opponentListSize;
+
+    .list {
+        ow-player-hero-rating {
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+ow-hero-list {
+    width: @opponentListSize;
+}
+
+ow-hero-list.opponents {
+    .fixed;
+}

@@ -1,1 +1,15 @@
-<input type="range" min="0" max="100" ng-model="$ctrl.rating">
+<ul class="list">
+    <li ng-repeat="hero in $ctrl.heroes | orderBy: 'name'">
+        <img ng-src="{{hero.avatar}}"/>
+        <div class="detail-wrapper">
+            <span class="name">
+                {{hero.name}}
+                <span ng-if="$ctrl.heroesRating[hero.id]">
+                    ( {{$ctrl.heroesRating[hero.id]}} )
+                </span>
+            </span>
+        </div>
+
+        <input type="range" min="0" max="100" ng-model="$ctrl.heroesRating">
+    </li>
+</ul>

@@ -76,11 +76,12 @@ footer li {
   float: left;
   position: relative;
 }
-.list li a {
+.list li button {
   display: block;
   text-decoration: none;
   color: white;
   height: 100%;
+  width: 100%;
 }
 .list li img {
   float: left;
@@ -93,11 +94,11 @@ footer li {
   vertical-align: middle;
 }
 .list li.selected {
-  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
-  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33ffffff', endColorstr='#00000000', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#59ffffff', endColorstr='#00000000', GradientType=1);
 }
 .list li.disabled {
   opacity: .4;
@@ -137,47 +138,6 @@ footer li {
   content: "";
   display: block;
   clear: both;
-}
-ow-map-list {
-  position: fixed;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 92%;
-  top: 0;
-  left: 0;
-  width: 35rem;
-  left: 25rem;
-}
-ow-map-list .modeO a {
-  color: #d60a3f;
-}
-ow-map-list .modeD a {
-  color: #1cfbfc;
-}
-ow-map-list .modeKOTH a {
-  color: #79839E;
-}
-ow-hero-list {
-  display: block;
-}
-ow-hero-list.player-heroes {
-  width: 25rem;
-}
-ow-hero-list.player-heroes .list ow-player-hero-rating {
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-ow-hero-list {
-  width: 25rem;
-}
-ow-hero-list.opponents {
-  position: fixed;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 92%;
-  top: 0;
-  left: 0;
 }
 .recommendation {
   position: fixed;
@@ -240,6 +200,47 @@ aside.open {
   bottom: 1rem;
   right: 1rem;
   z-index: 2;
+}
+ow-hero-list {
+  display: block;
+}
+ow-hero-list.player-heroes {
+  width: 25rem;
+}
+ow-hero-list.player-heroes .list ow-player-hero-rating {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+ow-hero-list {
+  width: 25rem;
+}
+ow-hero-list.opponents {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 92%;
+  top: 0;
+  left: 0;
+}
+ow-map-list {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 92%;
+  top: 0;
+  left: 0;
+  width: 35rem;
+  left: 25rem;
+}
+ow-map-list .modeO button {
+  color: #d60a3f;
+}
+ow-map-list .modeD button {
+  color: #1cfbfc;
+}
+ow-map-list .modeKOTH button {
+  color: #79839E;
 }
 @media screen and (max-width: 1300px) {
   .list li {

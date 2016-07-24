@@ -1,11 +1,5 @@
+@import "variables";
 @import "mixins";
-@import "scroll";
-
-@owBlue: #1cfbfc;
-@owRed: #d60a3f;
-@midPurple: #79839E;
-@opponentListSize: 25rem;
-@mapListSize: 35rem;
 
 body, html {
     font-size: 85%;
@@ -82,11 +76,12 @@ footer {
         width: 50%;
         float: left;
         position: relative;
-        a {
+        button {
             display: block;
             text-decoration: none;
             color: white;
-            height: 100%
+            height: 100%;
+            width: 100%;
         }
         img {
             float: left;
@@ -99,7 +94,7 @@ footer {
             vertical-align: middle;
         }
         &.selected {
-            #gradient.horizontal(rgba(255,255,255,.2), transparent);
+            #gradient.horizontal(rgba(255, 255, 255, .35), transparent);
         }
         &.disabled {
             opacity: .4;
@@ -142,57 +137,6 @@ footer {
     content: "";
     display: block;
     clear: both;
-
-}
-
-ow-map-list {
-    .fixed;
-    width: @mapListSize;
-    left: @opponentListSize;
-
-    .modeO {
-        //#gradient.horizontal(@owRed, transparent);
-        a{
-            color: @owRed;
-        }
-    }
-    .modeD {
-        //#gradient.horizontal(@owBlue, transparent);
-        a{
-            color: @owBlue;
-        }
-    }
-    .modeKOTH {
-        //#gradient.horizontal(@midPurple, transparent);
-        a{
-            color: @midPurple;
-        }
-    }
-
-}
-
-ow-hero-list {
-    display: block;
-}
-
-ow-hero-list.player-heroes {
-    width: @opponentListSize;
-
-    .list {
-        ow-player-hero-rating {
-            display: block;
-            position: relative;
-            z-index: 1;
-        }
-    }
-}
-
-ow-hero-list {
-    width: @opponentListSize;
-}
-
-ow-hero-list.opponents {
-    .fixed;
 
 }
 
@@ -257,6 +201,9 @@ aside {
     right: 1rem;
     z-index: 2;
 }
+
+@import "hero-list";
+@import "map-list";
 
 @media screen and (max-width: 1300px) {
     .list {

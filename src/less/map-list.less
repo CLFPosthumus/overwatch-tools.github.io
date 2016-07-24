@@ -1,0 +1,28 @@
+@import "variables";
+@import "mixins";
+
+ow-map-list {
+    .fixed;
+    width: @mapListSize;
+    left: @opponentListSize;
+
+    .modeO {
+        //#gradient.horizontal(@owRed, transparent);
+        button{
+            color: @owRed;
+        }
+    }
+    .modeD {
+        //#gradient.horizontal(@owBlue, transparent);
+        button{
+            color: @owBlue;
+        }
+    }
+    .modeKOTH {
+        //#gradient.horizontal(@midPurple, transparent);
+        button{
+            color: @midPurple;
+        }
+    }
+
+}

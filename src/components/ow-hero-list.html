@@ -1,23 +1,15 @@
-<!--<input type="search"-->
-       <!--ng-model="search"-->
-       <!--placeholder="find a hero by name, type or description">-->
-
 <ul class="list">
-    <li ng-repeat="hero in $ctrl.heroes | filter: search | orderBy: 'name'" ng-class="{
+    <li ng-repeat="hero in $ctrl.heroes | orderBy: 'name'" ng-class="{
     'selected': $ctrl.selectedHeroes[hero.id],
     'disabled' : !$ctrl.selectedHeroes[hero.id] && $ctrl.maxReached
     }">
-        <a ng-click="$ctrl.selectHero(hero)" href="javascript:void()">
+        <button ng-click="$ctrl.selectHero(hero)" href="javascript:void()">
             <img ng-src="{{hero.avatar}}"/>
             <div class="detail-wrapper">
                 <span class="name">
                     {{hero.name}}
-                    <span ng-if="$ctrl.heroesRating[hero.id]">
-                        ( {{$ctrl.heroesRating[hero.id]}} )
-                    </span>
                 </span>
             </div>
-        </a>
-        <ow-player-hero-rating ng-if="$ctrl.heroesRating" rating="$ctrl.heroesRating[hero.id]"></ow-player-hero-rating>
+        </button>
     </li>
 </ul>

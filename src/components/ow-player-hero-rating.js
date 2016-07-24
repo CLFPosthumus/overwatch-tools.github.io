@@ -1,9 +1,11 @@
 angular.module('overwatch-hero-picker').component('owPlayerHeroRating', {
-
-    bindings:{
-        rating: '=',
+    bindings: {
+        heroesRating: '=',
     },
-    controller: function () {
-    },
-    templateUrl: 'ow-player-hero-rating.html'
+    templateUrl: 'ow-player-hero-rating.html',
+    controller: function (HeroesService) {
+        HeroesService.getHeroes().then(heroes => {
+            this.heroes = heroes;
+        });
+    }
 });
