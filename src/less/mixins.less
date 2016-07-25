@@ -65,7 +65,6 @@
     position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
-    height:92%;
-    top: 0;
-    left: 0;
+    height: ~"calc(100% - @{footerHeight} - @{headerHeight})";
+    top: @headerHeight;
 }

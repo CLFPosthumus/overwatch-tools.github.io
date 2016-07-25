@@ -35,9 +35,9 @@ function styles() {
         .pipe(gulp.dest(config.paths.dist.css));
 }
 function watch(cb) {
-    gulp.watch(config.paths.src.less, styles);
+    gulp.watch(config.paths.lessWatch, styles);
     gulp.watch([].concat(config.paths.src.html).concat(config.paths.src.js), app);
-    gulp.watch(config.paths.src.index, buildIndexHtml());
+    gulp.watch(config.paths.src.index, buildIndexHtml);
     cb();
 }
 function buildIndexHtml(){

@@ -8,8 +8,8 @@
                     ( {{$ctrl.heroesRating[hero.id]}} )
                 </span>
             </span>
+            <input type="range" min="0" max="100" ng-model="$ctrl.heroesRating[hero.id]">
         </div>
 
-        <input type="range" min="0" max="100" ng-model="$ctrl.heroesRating">
     </li>
 </ul>

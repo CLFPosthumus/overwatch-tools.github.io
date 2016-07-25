@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "player-hero-rating";
 
 body, html {
     font-size: 85%;
@@ -32,7 +33,7 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 8%;
+    height: @footerHeight;
     box-sizing: border-box;
     width: 100%;
     padding: 1rem;
@@ -47,9 +48,10 @@ footer {
         padding-right: 2rem;
     }
 }
-
+.logo{
+    height: @headerHeight - 1.5rem;
+}
 .list {
-
     .name {
         display: block;
         font-size: 1rem;
@@ -175,15 +177,13 @@ footer {
 
 }
 
-aside {
+.nav {
+    .fixed;
+    z-index: 2;
     box-sizing: border-box;
     padding: 1rem;
     width: @opponentListSize;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
     right: -@opponentListSize;
-    top: 0;
     background-color: #333;
     transition: right 350ms ease-in;
 
@@ -193,8 +193,8 @@ aside {
 }
 
 .hamburger {
-    position: fixed;
-    bottom: 1rem;
+    position: absolute;
+    top: 1rem;
     right: 1rem;
     z-index: 2;
 }

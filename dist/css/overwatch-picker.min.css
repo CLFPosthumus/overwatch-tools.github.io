@@ -2,9 +2,19 @@
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 92%;
-  top: 0;
-  left: 0;
+  height: calc(100% - 5rem - 3.5rem);
+  top: 3.5rem;
+}
+ow-player-hero-rating .list li {
+  height: auto;
+  width: 100%;
+}
+ow-player-hero-rating .list li img {
+  width: 2rem;
+}
+ow-player-hero-rating .list li input {
+  display: block;
+  padding-left: 1rem;
 }
 body,
 html {
@@ -34,7 +44,7 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 8%;
+  height: 5rem;
   box-sizing: border-box;
   width: 100%;
   padding: 1rem;
@@ -49,6 +59,9 @@ footer li {
   list-style-type: none;
   display: inline-block;
   padding-right: 2rem;
+}
+.logo {
+  height: 2rem;
 }
 .list .name {
   display: block;
@@ -143,9 +156,8 @@ footer li {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 92%;
-  top: 0;
-  left: 0;
+  height: calc(100% - 5rem - 3.5rem);
+  top: 3.5rem;
   left: 60rem;
 }
 .recommendation li {
@@ -180,24 +192,26 @@ footer li {
 .recommendation li .score.negative {
   color: #d60a3f;
 }
-aside {
+.nav {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 5rem - 3.5rem);
+  top: 3.5rem;
+  z-index: 2;
   box-sizing: border-box;
   padding: 1rem;
   width: 25rem;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
   right: -25rem;
-  top: 0;
   background-color: #333;
   transition: right 350ms ease-in;
 }
-aside.open {
+.nav.open {
   right: 0;
 }
 .hamburger {
-  position: fixed;
-  bottom: 1rem;
+  position: absolute;
+  top: 1rem;
   right: 1rem;
   z-index: 2;
 }
@@ -219,17 +233,15 @@ ow-hero-list.opponents {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 92%;
-  top: 0;
-  left: 0;
+  height: calc(100% - 5rem - 3.5rem);
+  top: 3.5rem;
 }
 ow-map-list {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 92%;
-  top: 0;
-  left: 0;
+  height: calc(100% - 5rem - 3.5rem);
+  top: 3.5rem;
   width: 35rem;
   left: 25rem;
 }

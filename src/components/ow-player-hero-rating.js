@@ -6,6 +6,10 @@ angular.module('overwatch-hero-picker').component('owPlayerHeroRating', {
     controller: function (HeroesService) {
         HeroesService.getHeroes().then(heroes => {
             this.heroes = heroes;
+
+            angular.forEach(heroes, (hero)=>{
+                this.heroesRating[hero.id] = this.heroesRating[hero.id] || 50;
+            });
         });
     }
 });
