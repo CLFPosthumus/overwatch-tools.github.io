@@ -8,7 +8,8 @@ angular.module('overwatch-hero-picker').component('owPlayerHeroRating', {
             this.heroes = heroes;
 
             angular.forEach(heroes, (hero)=>{
-                this.heroesRating[hero.id] = this.heroesRating[hero.id] || 50;
+                this.heroesRating[hero.id] = this.heroesRating[hero.id] || 0;
+
             });
         });
     }

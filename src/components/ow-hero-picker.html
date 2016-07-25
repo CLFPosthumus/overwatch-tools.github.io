@@ -10,7 +10,7 @@
     <ow-map-list selected-map="$ctrl.selectedMap"></ow-map-list>
     <div class="recommendation" ng-show="$ctrl.heroesList.length ">
         <ul class="recommended clearfix">
-            <li ng-repeat="hero in $ctrl.heroesList | filter: $ctrl.recommendedFilter | limitTo: $ctrl.heroLimit ">
+            <li ng-repeat="hero in $ctrl.heroesList | filter: $ctrl.recommendedFilter | limitTo: $ctrl.heroesLimit ">
                 <img ng-src="{{ hero.avatar }}" />
                 <ow-hero-picker-score
                         final="$ctrl.heroFinalScore[hero.id]"
@@ -18,7 +18,7 @@
                         map="$ctrl.heroMapScore[hero.id]"></ow-hero-picker-score>
             </li>
         </ul>
-        <button ng-click="$ctrl.heroLimit = null" ng-show="$ctrl.heroLimit !== null">View all ratings</button>
+        <input type="checkbox" id="hero-limit" ng-click="$ctrl.toggleHeoresLimit($event)"><label for="hero-limit">Show all ratings</label>
     </div>
 
 

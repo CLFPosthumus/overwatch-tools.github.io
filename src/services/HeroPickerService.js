@@ -1,6 +1,6 @@
 angular.module('overwatch-hero-picker').service('HeroPickerService', function ($q, HeroesService) {
 
-    this.getRecommendedHero = (opposingHeroes, map) => $q.all({
+    this.getRecommendedHero = (opposingHeroes, map, heroesRating) => $q.all({
         heroes: HeroesService.getHeroes(),
         matching: HeroesService.getMatching()
     }).then((result) => {
@@ -20,13 +20,16 @@ angular.module('overwatch-hero-picker').service('HeroPickerService', function ($
                     }
                 }
 
+
                 if (map) {
                     recommendedByMap[pickHeroId] = result.matching[pickHeroId].maps[map.id] || 0;
                 } else {
                     recommendedByMap[pickHeroId] = 0;
                 }
                 finalRating[pickHeroId] =
-                    recommendedCounterByHero[pickHeroId] * -1 + recommendedByMap[pickHeroId] * nbOpponent * .4;
+                    recommendedCounterByHero[pickHeroId] * -1 +
+                    recommendedByMap[pickHeroId] * nbOpponent * 0.4 +
+                    heroesRating[pickHeroId] * nbOpponent * 0.6;
             }
         }
 
