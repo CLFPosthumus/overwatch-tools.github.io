@@ -39,6 +39,15 @@ angular.module('overwatch-hero-picker').component('owHeroPicker', {
             this.heroMapScore = r.ratings.heroMapRating;
 
             this.heroesList = r.heroesList.sort(function (heroA, heroB) {
+                if ( r.ratings.finalRating[heroB.id] === r.ratings.finalRating[heroA.id]){
+                    if (heroA.name > heroB.name){
+                        return 1;
+                    }
+                    if (heroA.name < heroB.name){
+                        return -1;
+                    }
+                    return 0;
+                }
                 return r.ratings.finalRating[heroB.id] - r.ratings.finalRating[heroA.id];
             });
         });
