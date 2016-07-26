@@ -2,12 +2,13 @@
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 5rem);
-  top: 5rem;
+  height: calc(100% - 5rem - 8rem);
+  top: 8rem;
 }
 ow-player-hero-rating .list li {
   height: auto;
   width: 100%;
+  margin-bottom: .4rem;
 }
 ow-player-hero-rating .list li img {
   width: 2rem;
@@ -30,6 +31,9 @@ body {
 }
 small {
   font-size: 0.75rem;
+}
+button {
+  cursor: pointer;
 }
 ul,
 li {
@@ -59,14 +63,41 @@ footer li {
   display: inline-block;
   padding-right: 2rem;
 }
-.logo {
-  height: 5rem;
+header .logo {
+  height: 8rem;
 }
-.logo img {
-  height: 2rem;
+header .logo img {
+  height: 2.5rem;
 }
-.logo small {
+header .logo small {
   display: block;
+}
+header .header-title {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 5rem - 8rem);
+  top: 8rem;
+  top: 6rem;
+  font-size: 1.25rem;
+}
+header .header-title.picker {
+  left: 1rem ;
+}
+header .header-title.map {
+  left: 25rem;
+}
+header .header-title.recommended {
+  left: 60rem;
+}
+.modeO {
+  color: #d60a3f;
+}
+.modeD {
+  color: #1cfbfc;
+}
+.modeKOTH {
+  color: #b4c2e3;
 }
 .list .name {
   display: block;
@@ -111,12 +142,19 @@ footer li {
   padding-left: 1rem;
   vertical-align: middle;
 }
-.list li.selected {
-  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
-  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
+.list li:hover {
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#59ffffff', endColorstr='#00000000', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4dffffff', endColorstr='#00000000', GradientType=1);
+}
+.list li.selected {
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66ffffff', endColorstr='#00000000', GradientType=1);
 }
 .list li.disabled {
   opacity: .4;
@@ -161,8 +199,8 @@ footer li {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 5rem);
-  top: 5rem;
+  height: calc(100% - 5rem - 8rem);
+  top: 8rem;
   left: 60rem;
 }
 .recommendation li {
@@ -201,8 +239,8 @@ footer li {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 5rem);
-  top: 5rem;
+  height: calc(100% - 5rem - 8rem);
+  top: 8rem;
   z-index: 2;
   box-sizing: border-box;
   padding: 1rem;
@@ -222,6 +260,9 @@ footer li {
 }
 ow-hero-list {
   display: block;
+  padding-left: 1rem;
+  left: 0;
+  box-sizing: border-box;
 }
 ow-hero-list.player-heroes {
   width: 25rem;
@@ -238,16 +279,18 @@ ow-hero-list.opponents {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 5rem);
-  top: 5rem;
+  height: calc(100% - 5rem - 8rem);
+  top: 8rem;
 }
 ow-map-list {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 5rem);
-  top: 5rem;
+  height: calc(100% - 5rem - 8rem);
+  top: 8rem;
   width: 35rem;
+  box-sizing: border-box;
+  padding-left: 1rem;
   left: 25rem;
 }
 ow-map-list .modeO button {
@@ -257,7 +300,7 @@ ow-map-list .modeD button {
   color: #1cfbfc;
 }
 ow-map-list .modeKOTH button {
-  color: #79839E;
+  color: #b4c2e3;
 }
 @media screen and (max-width: 1300px) {
   .list li {
@@ -267,13 +310,25 @@ ow-map-list .modeKOTH button {
     left: 30rem;
   }
   ow-map-list {
-    width: 17.5rem;
     left: 12.5rem;
+    width: 17.5rem;
   }
   ow-hero-list {
     width: 12.5rem;
   }
+  header .header-title {
+    font-size: .75rem;
+  }
+  header .header-title.map {
+    left: 12.5rem;
+  }
+  header .header-title.recommended {
+    left: 30rem;
+  }
 }
 .ngdialog a {
   color: #d60a3f;
+}
+.pull-right {
+  float: right;
 }

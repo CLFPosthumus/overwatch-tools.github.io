@@ -19,7 +19,10 @@ body {
 small {
     font-size: 0.75rem;
 }
+button{
+    cursor:pointer;
 
+}
 ul, li {
     margin: 0;
     padding: 0;
@@ -48,15 +51,45 @@ footer {
         padding-right: 2rem;
     }
 }
-.logo{
-    height: @headerHeight;
-    img{
-        height:@headerHeight - 3rem;
+
+header {
+    .logo {
+        height: @headerHeight;
+        img {
+            height: @logoHeight;
+        }
+        small {
+            display: block;
+        }
     }
-    small {
-        display: block;
+    .header-title {
+        .fixed;
+        top: @headerHeight - 2rem;
+        font-size:1.25rem;
+        &.picker {
+            left: 1rem ;
+        }
+        &.map {
+            left: @opponentListSize;
+        }
+        &.recommended {
+            left: @opponentListSize + @mapListSize;
+        }
     }
 }
+
+.modeO {
+    color: @owRed;
+}
+
+.modeD {
+    color: @owBlue;
+}
+
+.modeKOTH {
+    color: @midPurple;
+}
+
 .list {
     .name {
         display: block;
@@ -101,8 +134,11 @@ footer {
             padding-left: 1rem;
             vertical-align: middle;
         }
+        &:hover{
+            #gradient.horizontal(rgba(255, 255, 255, .3), transparent);
+        }
         &.selected {
-            #gradient.horizontal(rgba(255, 255, 255, .35), transparent);
+            #gradient.horizontal(rgba(255, 255, 255, .4), transparent);
         }
         &.disabled {
             opacity: .4;
@@ -175,7 +211,7 @@ footer {
                 padding-top: .25rem;
             }
 
-            &.negative{
+            &.negative {
                 color: @owRed;
             }
         }
@@ -215,23 +251,43 @@ footer {
         }
     }
 
+    @halfRecommendedLeft: @opponentListSize/2 + @mapListSize/2;
+    @halfOpponentListSize: @opponentListSize /2;
+    @halfMapListLeft: @halfOpponentListSize;
+    @halfMapListSize: @mapListSize / 2;
     .recommendation {
-        left: @opponentListSize/2 + @mapListSize/2;
+        left: @halfRecommendedLeft;
     }
-
     ow-map-list {
-        width: @mapListSize/2;
-        left: @opponentListSize/2;
+
+        left: @halfMapListLeft;
+        width: @halfMapListSize;
 
     }
 
     ow-hero-list {
-        width: @opponentListSize /2;
+        width: @halfOpponentListSize;
+    }
+
+    header{
+        .header-title{
+            font-size:.75rem;
+        }
+        .header-title.map{
+            left: @halfMapListLeft;
+        }
+        .header-title.recommended{
+            left: @halfRecommendedLeft;
+        }
     }
 }
 
-.ngdialog{
-    a{
+.ngdialog {
+    a {
         color: @owRed;
     }
+}
+
+.pull-right{
+    float:right;
 }

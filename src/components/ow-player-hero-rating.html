@@ -4,12 +4,11 @@
         <div class="detail-wrapper">
             <span class="name">
                 {{hero.name}}
-                <span ng-if="$ctrl.heroesRating[hero.id]">
-                    ( {{$ctrl.heroesRating[hero.id]}} )
+                <span class="pull-right">
+                    (<span ng-show="$ctrl.heroesRating[hero.id] > 0">+</span>{{$ctrl.heroesRating[hero.id]}})
                 </span>
             </span>
             <input type="range" min="-5" max="5" ng-model="$ctrl.heroesRating[hero.id]">
         </div>
-
     </li>
 </ul>

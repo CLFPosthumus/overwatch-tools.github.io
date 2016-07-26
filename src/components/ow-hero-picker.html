@@ -3,6 +3,11 @@
         <img  src="/dist/media/overwatch_03_flat.svg">
         <small>Overwatch<sup>TM</sup> is a registered trademark of Blizzard Entertainment</small>
     </div>
+
+    <div class="header-title picker">Pick hero(es) to counter</div>
+    <div class="header-title map">Chose a map <span class="mode0">Offense</span>, <span class="modeD">Defense</span> or <span class="modeKOTH">Assault</span></div>
+    <div class="header-title recommended">You should pick (from <span class="modeD">best</span> to <span class="modeO">worst</span>)</div>
+
     <div class="right-tools">
         <button ng-dialog="how-to-use.html"
                 ng-dialog-class="ngdialog-theme-default">Help</button>
@@ -10,6 +15,7 @@
     </div>
 
     <nav class="nav" ng-class="{open : navOpened}">
+        <ow-reset-player-hero-rating heroes-rating="$ctrl.heroesRating"></ow-reset-player-hero-rating>
         <ow-player-hero-rating heroes-rating="$ctrl.heroesRating" ></ow-player-hero-rating>
     </nav>
 </header>
