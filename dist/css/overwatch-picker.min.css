@@ -69,6 +69,9 @@ header .logo {
 header .logo img {
   height: 2.5rem;
 }
+header .logo img.small {
+  display: none;
+}
 header .logo small {
   display: block;
 }
@@ -302,28 +305,57 @@ ow-map-list .modeD button {
 ow-map-list .modeKOTH button {
   color: #b4c2e3;
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1023px) {
   .list li {
     width: 100%;
   }
+  .nav {
+    top: 5.5rem;
+    height: calc(100% - 5rem - 5.5rem);
+  }
   .recommendation {
-    left: 30rem;
+    left: 0;
+    height: calc((100% - 5rem - 5.5rem)/2);
+    top: 50%;
+  }
+  .recommendation li .score small {
+    display: none;
   }
   ow-map-list {
-    left: 12.5rem;
-    width: 17.5rem;
+    padding-left: 0;
+    top: 5.5rem;
+    left: 45%;
+    width: 55%;
+    height: calc((100% - 5rem - 5.5rem)/2);
   }
   ow-hero-list {
-    width: 12.5rem;
+    padding-left: 0;
+  }
+  ow-hero-list.opponents {
+    top: 5.5rem;
+    width: 45%;
+    height: calc((100% - 5rem - 5.5rem)/2);
+  }
+  header {
+    height: 5.5rem;
   }
   header .header-title {
-    font-size: .75rem;
+    display: none;
   }
-  header .header-title.map {
-    left: 12.5rem;
+  header .logo {
+    height: 5rem;
   }
-  header .header-title.recommended {
-    left: 30rem;
+  header .logo img.full {
+    display: none;
+  }
+  header .logo img.small {
+    display: block;
+  }
+  footer li {
+    padding-right: 0.5rem;
+  }
+  footer small {
+    display: none;
   }
 }
 .ngdialog a {

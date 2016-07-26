@@ -21,14 +21,6 @@ angular.module('overwatch-hero-picker').component('owMapList', {
                 if (a.id < b.id){
                     return -1;
                 }
-                //
-                // if (a.mode === 'O' && b.mode === 'D'){
-                //     return 1;
-                // }
-                // if (b.mode === 'D' && a.mode === 'O'){
-                //     return -1
-                // }
-
                 return 0;
             });
         });

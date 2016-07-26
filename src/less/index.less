@@ -55,8 +55,11 @@ footer {
 header {
     .logo {
         height: @headerHeight;
-        img {
+        img{
             height: @logoHeight;
+        }
+        img.small{
+            display: none;
         }
         small {
             display: block;
@@ -244,41 +247,83 @@ header {
 @import "hero-list";
 @import "map-list";
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1023px) {
+
+    @halfRecommendedLeft: @opponentListSize/2 + @mapListSize/2;
+    @halfOpponentListSize: 45%;
+    @halfMapListLeft: @halfOpponentListSize;
+    @halfMapListSize: 55%;
+    @logoHeightSmall: 5rem;
+    @headerHeightSmall: @logoHeightSmall + .5rem;
+
+    @halfScreenHeight:  ~"calc((100% - @{footerHeight} - @{headerHeightSmall})/2)";
+
+
     .list {
         li {
             width: 100%;
         }
     }
 
-    @halfRecommendedLeft: @opponentListSize/2 + @mapListSize/2;
-    @halfOpponentListSize: @opponentListSize /2;
-    @halfMapListLeft: @halfOpponentListSize;
-    @halfMapListSize: @mapListSize / 2;
+    .nav{
+        top:@headerHeightSmall;
+        height: ~"calc(100% - @{footerHeight} - @{headerHeightSmall})";
+    }
     .recommendation {
-        left: @halfRecommendedLeft;
+        left: 0;
+        height: @halfScreenHeight;
+        top:50%;
+
+        li .score small{
+            display:none;
+        }
     }
     ow-map-list {
-
+        padding-left:0;
+        top: @headerHeightSmall;
         left: @halfMapListLeft;
         width: @halfMapListSize;
+        height: @halfScreenHeight;
 
     }
-
-    ow-hero-list {
+    ow-hero-list{
+        padding-left:0;
+    }
+    ow-hero-list.opponents {
+        top: @headerHeightSmall;
         width: @halfOpponentListSize;
+        height: @halfScreenHeight;
     }
 
     header{
-        .header-title{
-            font-size:.75rem;
+        height: @headerHeightSmall;;
+        .header-title {
+            display:none;
         }
-        .header-title.map{
-            left: @halfMapListLeft;
+        //.header-title.map{
+        //    left: @halfMapListLeft;
+        //}
+        //.header-title.recommended{
+        //    left: @halfRecommendedLeft;
+        //}
+        .logo{
+            height: @logoHeightSmall;
+            img.full{
+                display: none;
+            }
+            img.small{
+                display: block;
+            }
         }
-        .header-title.recommended{
-            left: @halfRecommendedLeft;
+    }
+    footer {
+        li{
+            padding-right:0.5rem;
         }
+        small{
+            display: none;
+        }
+        
     }
 }
 
