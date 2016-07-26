@@ -3,7 +3,12 @@
     "lessWatch": "src/**/*.less",
     "src": {
       "vendorJs": [
-        "node_modules/angular/angular.min.js"
+        "node_modules/angular/angular.min.js",
+        "node_modules/ng-dialog/js/ngDialog.min.js"
+      ],
+      "vendorCss": [
+        "node_modules/ng-dialog/css/ngDialog.min.css",
+        "node_modules/ng-dialog/css/ngDialog-theme-default.min.css"
       ],
       "js": [
         "src/**/module.js",

@@ -1,6 +1,14 @@
 <header>
-    <img class="logo" src="/dist/media/overwatch_03_flat.svg">
-    <button class="hamburger" ng-click="navOpened = !navOpened">Player settings</button>
+    <div class="logo">
+        <img  src="/dist/media/overwatch_03_flat.svg">
+        <small>Overwatch<sup>TM</sup> is a registered trademark of Blizzard Entertainment</small>
+    </div>
+    <div class="right-tools">
+        <button ng-dialog="how-to-use.html"
+                ng-dialog-class="ngdialog-theme-default">Help</button>
+        <button class="hamburger" ng-click="navOpened = !navOpened">Player settings</button>
+    </div>
+
     <nav class="nav" ng-class="{open : navOpened}">
         <ow-player-hero-rating heroes-rating="$ctrl.heroesRating" ></ow-player-hero-rating>
     </nav>
@@ -20,8 +28,6 @@
         </ul>
         <input type="checkbox" id="hero-limit" ng-click="$ctrl.toggleHeoresLimit($event)"><label for="hero-limit">Show all ratings</label>
     </div>
-
-
 </main>
 
 

@@ -23,6 +23,11 @@ function app() {
         .pipe($.concat(config.packageName + '.min.js'))
         .pipe(gulp.dest(config.paths.dist.js));
 }
+function vendorsCss() {
+    return gulp.src(config.paths.src.vendorCss)
+        .pipe($.concat(config.packageName + '.vendors.min.css'))
+        .pipe(gulp.dest(config.paths.dist.css));
+}
 function styles() {
     return gulp.src(config.paths.src.less)
         .pipe($.plumber(function(err){
@@ -58,5 +63,5 @@ function serve(cb) {
     });
     cb();
 }
-gulp.task('default', gulp.series(vendorsJs, app, styles, buildIndexHtml, watch, serve));
+gulp.task('default', gulp.series(vendorsJs,vendorsCss, app, styles, buildIndexHtml, watch, serve));
 

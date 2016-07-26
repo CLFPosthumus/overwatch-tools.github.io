@@ -1,6 +1,6 @@
 {
   "name": "paquettea.github.io",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Home page for Overwatch team matching",
   "main": "index.html",
   "scripts": {
@@ -39,7 +39,8 @@
     "gulp-ng-annotate": "^2.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-template": "^4.0.0",
-    "gulp-uglify": "^1.5.4"
+    "gulp-uglify": "^1.5.4",
+    "ng-dialog": "^0.6.2"
   },
   "dependencies": {
     "angular": "^1.5.7"

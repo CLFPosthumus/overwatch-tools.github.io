@@ -1,12 +1,12 @@
 angular.module('overwatch-hero-picker').component('owHeroPicker', {
     templateUrl: 'ow-hero-picker.html',
-    controller: function ($q, $scope, HeroesService, HeroPickerService) {
+    controller: function ($q, $scope, HeroesService, HeroPickerService, LocalStorageKeys) {
         let minHeroShown = 12;
 
         this.heroesLimit = minHeroShown;
         this.selectedHeroes = {};
         this.heroesList = [];
-        this.heroesRating = angular.fromJson(localStorage.getItem('ow-player-hero-rating')) || {};
+        this.heroesRating = angular.fromJson(localStorage.getItem(LocalStorageKeys.heroesRatings)) || {};
         this.selectedMap = null;
 
         $scope.$watch('$ctrl.selectedMap', (value) => {
@@ -24,7 +24,7 @@ angular.module('overwatch-hero-picker').component('owHeroPicker', {
         $scope.$watch('$ctrl.heroesRating', (value) => {
             if (value) {
                 this.getRecommendedHero();
-                localStorage.setItem('ow-player-hero-rating', angular.toJson(this.heroesRating));
+                localStorage.setItem(LocalStorageKeys.heroesRatings, angular.toJson(this.heroesRating));
             }
         }, true);
 
@@ -39,11 +39,11 @@ angular.module('overwatch-hero-picker').component('owHeroPicker', {
             this.heroMapScore = r.ratings.heroMapRating;
 
             this.heroesList = r.heroesList.sort(function (heroA, heroB) {
-                if ( r.ratings.finalRating[heroB.id] === r.ratings.finalRating[heroA.id]){
-                    if (heroA.name > heroB.name){
+                if (r.ratings.finalRating[heroB.id] === r.ratings.finalRating[heroA.id]) {
+                    if (heroA.name > heroB.name) {
                         return 1;
                     }
-                    if (heroA.name < heroB.name){
+                    if (heroA.name < heroB.name) {
                         return -1;
                     }
                     return 0;

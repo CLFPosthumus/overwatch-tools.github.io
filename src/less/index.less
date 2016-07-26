@@ -49,7 +49,13 @@ footer {
     }
 }
 .logo{
-    height: @headerHeight - 1.5rem;
+    height: @headerHeight;
+    img{
+        height:@headerHeight - 3rem;
+    }
+    small {
+        display: block;
+    }
 }
 .list {
     .name {
@@ -192,7 +198,7 @@ footer {
     }
 }
 
-.hamburger {
+.right-tools {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -221,5 +227,11 @@ footer {
 
     ow-hero-list {
         width: @opponentListSize /2;
+    }
+}
+
+.ngdialog{
+    a{
+        color: @owRed;
     }
 }

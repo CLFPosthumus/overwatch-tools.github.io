@@ -2,8 +2,8 @@
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 3.5rem);
-  top: 3.5rem;
+  height: calc(100% - 5rem - 5rem);
+  top: 5rem;
 }
 ow-player-hero-rating .list li {
   height: auto;
@@ -60,7 +60,13 @@ footer li {
   padding-right: 2rem;
 }
 .logo {
+  height: 5rem;
+}
+.logo img {
   height: 2rem;
+}
+.logo small {
+  display: block;
 }
 .list .name {
   display: block;
@@ -155,8 +161,8 @@ footer li {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 3.5rem);
-  top: 3.5rem;
+  height: calc(100% - 5rem - 5rem);
+  top: 5rem;
   left: 60rem;
 }
 .recommendation li {
@@ -195,8 +201,8 @@ footer li {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 3.5rem);
-  top: 3.5rem;
+  height: calc(100% - 5rem - 5rem);
+  top: 5rem;
   z-index: 2;
   box-sizing: border-box;
   padding: 1rem;
@@ -208,7 +214,7 @@ footer li {
 .nav.open {
   right: 0;
 }
-.hamburger {
+.right-tools {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -232,15 +238,15 @@ ow-hero-list.opponents {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 3.5rem);
-  top: 3.5rem;
+  height: calc(100% - 5rem - 5rem);
+  top: 5rem;
 }
 ow-map-list {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 3.5rem);
-  top: 3.5rem;
+  height: calc(100% - 5rem - 5rem);
+  top: 5rem;
   width: 35rem;
   left: 25rem;
 }
@@ -267,4 +273,7 @@ ow-map-list .modeKOTH button {
   ow-hero-list {
     width: 12.5rem;
   }
+}
+.ngdialog a {
+  color: #d60a3f;
 }
