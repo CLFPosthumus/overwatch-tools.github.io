@@ -7,7 +7,7 @@ angular.module('overwatch-hero-picker').service('HeroPickerService', function ($
         let recommendedCounterByHero = {};
         let recommendedByMap = {};
         let finalRating = {};
-        let nbOpponent = Object.keys(opposingHeroes).length || 6;
+        let nbOpponent = Object.keys(opposingHeroes).length;
 
         //(Hero1+Hero2+Hero3+Hero4+Hero5+Hero6+(MapRating x opposingHeroesCount *.4)) x PlayerRating
         for (let pickHeroId in result.matching) {
@@ -20,16 +20,18 @@ angular.module('overwatch-hero-picker').service('HeroPickerService', function ($
                     }
                 }
 
-
                 if (map) {
                     recommendedByMap[pickHeroId] = result.matching[pickHeroId].maps[map.id] || 0;
                 } else {
                     recommendedByMap[pickHeroId] = 0;
                 }
                 finalRating[pickHeroId] =
-                    recommendedCounterByHero[pickHeroId] * -1 +
-                    recommendedByMap[pickHeroId] * nbOpponent * 0.4 +
-                    heroesRating[pickHeroId] * nbOpponent * 0.6;
+                    recommendedByMap[pickHeroId] * 0.4 +
+                    heroesRating[pickHeroId] * 0.6;
+
+                if (nbOpponent !== 0){
+                    finalRating[pickHeroId] += recommendedCounterByHero[pickHeroId] / nbOpponent * -1;
+                }
             }
         }
 
