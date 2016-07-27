@@ -1,5 +1,6 @@
-angular.module('overwatch-hero-picker').config(function ($httpProvider,ngDialogProvider) {
+angular.module('overwatch-hero-picker').config(function ($httpProvider,ngDialogProvider, $touchProvider) {
     $httpProvider.defaults.cache = true;
+    $touchProvider.ngClickOverrideEnabled(true);
 
     ngDialogProvider.setDefaults({
         className: 'ngdialog-theme-default',

@@ -1,4 +1,4 @@
-angular.module('overwatch-hero-picker', ['ngDialog']).run(function (ngDialog, LocalStorageKeys, $window, $document, $templateCache) {
+angular.module('overwatch-hero-picker', ['ngDialog', 'ngTouch']).run(function (ngDialog, LocalStorageKeys, $window, $document, $templateCache) {
     function setFullScreen() {
         var doc = $document[0];
         var docEl = $document[0].documentElement;
