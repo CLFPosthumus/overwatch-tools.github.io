@@ -2,8 +2,39 @@
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 8rem);
+  height: calc(100% - 5.5rem - 8rem);
   top: 8rem;
+}
+.separator {
+  content: "";
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 1rem;
+}
+.separator-top {
+  content: "";
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 1rem;
+  background-image: -webkit-linear-gradient(top, black 0%, transparent 100%);
+  background-image: -o-linear-gradient(top, black 0%, transparent 100%);
+  background-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff000000', endColorstr='#00000000', GradientType=0);
+}
+.separator-bottom {
+  content: "";
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 1rem;
+  background-image: -webkit-linear-gradient(top, transparent 0%, black 100%);
+  background-image: -o-linear-gradient(top, transparent 0%, black 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#ff000000', GradientType=0);
 }
 ow-player-hero-rating .list li {
   height: auto;
@@ -47,11 +78,15 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 5rem;
+  height: 5.5rem;
   box-sizing: border-box;
   width: 100%;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.5);
+  background-image: -webkit-linear-gradient(top, transparent 0%, black 100%);
+  background-image: -o-linear-gradient(top, transparent 0%, black 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#ff000000', GradientType=0);
   text-align: center;
 }
 footer ul,
@@ -63,8 +98,12 @@ footer li {
   display: inline-block;
   padding-right: 2rem;
 }
-header .logo {
-  height: 8rem;
+header {
+  background-image: -webkit-linear-gradient(top, black 0%, transparent 100%);
+  background-image: -o-linear-gradient(top, black 0%, transparent 100%);
+  background-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff000000', endColorstr='#00000000', GradientType=0);
 }
 header .logo img {
   height: 2.5rem;
@@ -79,13 +118,13 @@ header .header-title {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 8rem);
+  height: calc(100% - 5.5rem - 8rem);
   top: 8rem;
   top: 6rem;
   font-size: 1.25rem;
 }
 header .header-title.picker {
-  left: 1rem ;
+  left: 1rem;
 }
 header .header-title.map {
   left: 25rem;
@@ -105,9 +144,9 @@ header .header-title.recommended {
 .list .name {
   display: block;
   font-size: 1rem;
+  line-height: 3rem;
   white-space: nowrap;
   text-shadow: 1px 1px black;
-  padding: 0.5vw 0.2vw;
 }
 .list ul {
   margin: 0;
@@ -202,7 +241,7 @@ header .header-title.recommended {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 8rem);
+  height: calc(100% - 5.5rem - 8rem);
   top: 8rem;
   left: 60rem;
 }
@@ -242,7 +281,7 @@ header .header-title.recommended {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 8rem);
+  height: calc(100% - 5.5rem - 8rem);
   top: 8rem;
   z-index: 2;
   box-sizing: border-box;
@@ -282,14 +321,14 @@ ow-hero-list.opponents {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 8rem);
+  height: calc(100% - 5.5rem - 8rem);
   top: 8rem;
 }
 ow-map-list {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 5rem - 8rem);
+  height: calc(100% - 5.5rem - 8rem);
   top: 8rem;
   width: 35rem;
   box-sizing: border-box;
@@ -306,50 +345,116 @@ ow-map-list .modeKOTH button {
   color: #b4c2e3;
 }
 @media screen and (max-width: 1023px) {
+  body {
+    padding: 0 0 5rem;
+  }
   .list li {
     width: 100%;
   }
+  .list .name {
+    font-size: .9rem;
+  }
   .nav {
-    top: 5.5rem;
-    height: calc(100% - 5rem - 5.5rem);
+    top: 5rem;
+    height: calc(100% - 5.5rem - 5rem);
   }
   .recommendation {
     left: 0;
-    height: calc((100% - 5rem - 5.5rem)/2);
-    top: 50%;
+    height: 45%;
+    padding-bottom: 5.5rem;
+    box-sizing: border-box;
+    top: 55%;
+    padding-top: 1rem;
   }
   .recommendation li .score small {
     display: none;
   }
+  .recommendation:after {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 1rem;
+    background-image: -webkit-linear-gradient(top, black 0%, transparent 100%);
+    background-image: -o-linear-gradient(top, black 0%, transparent 100%);
+    background-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff000000', endColorstr='#00000000', GradientType=0);
+    top: 55%;
+    left: 0;
+  }
   ow-map-list {
     padding-left: 0;
-    top: 5.5rem;
+    top: 0;
+    padding-top: 5rem;
     left: 45%;
     width: 55%;
-    height: calc((100% - 5rem - 5.5rem)/2);
+    height: 55%;
+  }
+  ow-map-list .list li:last-child {
+    margin-bottom: 1rem;
+  }
+  ow-map-list:after {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 1rem;
+    background-image: -webkit-linear-gradient(top, transparent 0%, black 100%);
+    background-image: -o-linear-gradient(top, transparent 0%, black 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#ff000000', GradientType=0);
+    top: calc(55% - 1rem);
+    left: 45%;
+    width: 35rem;
   }
   ow-hero-list {
     padding-left: 0;
   }
   ow-hero-list.opponents {
-    top: 5.5rem;
+    box-sizing: border-box;
+    top: 0;
+    padding-top: 5rem;
     width: 45%;
-    height: calc((100% - 5rem - 5.5rem)/2);
+    height: 55%;
+  }
+  ow-hero-list.opponents .list li:last-child {
+    margin-bottom: 1rem;
+  }
+  ow-hero-list.opponents:after {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 1rem;
+    background-image: -webkit-linear-gradient(top, transparent 0%, black 100%);
+    background-image: -o-linear-gradient(top, transparent 0%, black 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#ff000000', GradientType=0);
+    top: calc(55% - 1rem);
+    left: 0;
+    width: 25rem;
   }
   header {
-    height: 5.5rem;
+    z-index: 2;
+    position: relative;
+    height: 5rem;
   }
   header .header-title {
     display: none;
-  }
-  header .logo {
-    height: 5rem;
   }
   header .logo img.full {
     display: none;
   }
   header .logo img.small {
+    height: 4rem;
     display: block;
+  }
+  header small {
+    font-size: 0.55rem;
+    line-height: .5rem;
   }
   footer li {
     padding-right: 0.5rem;
@@ -357,9 +462,15 @@ ow-map-list .modeKOTH button {
   footer small {
     display: none;
   }
+  .ngdialog.ngdialog-theme-default .ngdialog-content {
+    max-width: none;
+  }
 }
 .ngdialog a {
   color: #d60a3f;
+}
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  max-width: 550px;
 }
 .pull-right {
   float: right;

@@ -19,10 +19,12 @@ body {
 small {
     font-size: 0.75rem;
 }
-button{
-    cursor:pointer;
+
+button {
+    cursor: pointer;
 
 }
+
 ul, li {
     margin: 0;
     padding: 0;
@@ -40,7 +42,7 @@ footer {
     box-sizing: border-box;
     width: 100%;
     padding: 1rem;
-    background: rgba(0, 0, 0, .5);
+    #gradient.vertical(transparent, black);
     text-align: center;
     ul, li {
         margin: 0;
@@ -53,12 +55,12 @@ footer {
 }
 
 header {
+    #gradient.vertical(black, transparent);
     .logo {
-        height: @headerHeight;
-        img{
+        img {
             height: @logoHeight;
         }
-        img.small{
+        img.small {
             display: none;
         }
         small {
@@ -68,9 +70,9 @@ header {
     .header-title {
         .fixed;
         top: @headerHeight - 2rem;
-        font-size:1.25rem;
+        font-size: 1.25rem;
         &.picker {
-            left: 1rem ;
+            left: 1rem;
         }
         &.map {
             left: @opponentListSize;
@@ -97,10 +99,9 @@ header {
     .name {
         display: block;
         font-size: 1rem;
+        line-height:3rem;
         white-space: nowrap;
-        //background: rgba(0, 30, 75, .6);
         text-shadow: 1px 1px black;
-        padding: 0.5vw 0.2vw;
     }
     ul {
         margin: 0;
@@ -137,7 +138,7 @@ header {
             padding-left: 1rem;
             vertical-align: middle;
         }
-        &:hover{
+        &:hover {
             #gradient.horizontal(rgba(255, 255, 255, .3), transparent);
         }
         &.selected {
@@ -249,90 +250,136 @@ header {
 
 @media screen and (max-width: 1023px) {
 
-    @halfRecommendedLeft: @opponentListSize/2 + @mapListSize/2;
-    @halfOpponentListSize: 45%;
-    @halfMapListLeft: @halfOpponentListSize;
-    @halfMapListSize: 55%;
-    @logoHeightSmall: 5rem;
-    @headerHeightSmall: @logoHeightSmall + .5rem;
-
-    @halfScreenHeight:  ~"calc((100% - @{footerHeight} - @{headerHeightSmall})/2)";
-
+    body {
+        padding: 0 0 5rem;
+    }
 
     .list {
         li {
             width: 100%;
         }
+        .name{
+            font-size:.9rem;
+        }
     }
 
-    .nav{
-        top:@headerHeightSmall;
+    .nav {
+        top: @headerHeightSmall;
         height: ~"calc(100% - @{footerHeight} - @{headerHeightSmall})";
     }
+
     .recommendation {
         left: 0;
-        height: @halfScreenHeight;
-        top:50%;
+        height: 100% - @selectListsHeight;
+        padding-bottom: @footerHeight;
+        box-sizing: border-box;
+        top: @selectListsHeight;
+        padding-top:@listSeparatorHeight;
+        li .score small {
+            display: none;
+        }
 
-        li .score small{
-            display:none;
+        &:after {
+            .separator-top;
+            top: @selectListsHeight;
+            left:0;
+
         }
     }
+
     ow-map-list {
-        padding-left:0;
-        top: @headerHeightSmall;
+        padding-left: 0;
+        top: 0;
+        padding-top: @headerHeightSmall;
         left: @halfMapListLeft;
         width: @halfMapListSize;
-        height: @halfScreenHeight;
+        height: @selectListsHeight;
+        .list li {
+            &:last-child {
+                margin-bottom: @listSeparatorHeight;
+            }
+        }
+        &:after {
+            .separator-bottom;
+            top: ~"calc(@{selectListsHeight} - @{listSeparatorHeight})";
+            left: @halfMapListLeft;
+            width:@mapListSize;
 
+        }
     }
-    ow-hero-list{
-        padding-left:0;
+
+    ow-hero-list {
+        padding-left: 0;
     }
+
     ow-hero-list.opponents {
-        top: @headerHeightSmall;
+        box-sizing: border-box;
+        top: 0;
+        padding-top: @headerHeightSmall;
         width: @halfOpponentListSize;
-        height: @halfScreenHeight;
+        height: @selectListsHeight;
+
+        .list li{
+            &:last-child {
+                margin-bottom: @listSeparatorHeight;
+            }
+        }
+        &:after {
+            .separator-bottom;
+            top: ~"calc(@{selectListsHeight} - @{listSeparatorHeight})";
+            left: 0;
+            width:@opponentListSize;
+
+        }
     }
 
-    header{
+    header {
+        z-index: 2;
+        position: relative;
         height: @headerHeightSmall;;
         .header-title {
-            display:none;
+            display: none;
         }
-        //.header-title.map{
-        //    left: @halfMapListLeft;
-        //}
-        //.header-title.recommended{
-        //    left: @halfRecommendedLeft;
-        //}
-        .logo{
-            height: @logoHeightSmall;
-            img.full{
+        .logo {
+            img.full {
                 display: none;
             }
-            img.small{
+            img.small {
+                height: @logoHeightSmall;
                 display: block;
             }
         }
-    }
-    footer {
-        li{
-            padding-right:0.5rem;
+        small {
+            font-size: 0.55rem;
+            line-height: .5rem;
         }
-        small{
+    }
+
+    footer {
+        li {
+            padding-right: 0.5rem;
+        }
+        small {
             display: none;
         }
-        
+
+    }
+
+    .ngdialog.ngdialog-theme-default .ngdialog-content{
+            max-width:none;
     }
 }
+
 
 .ngdialog {
     a {
         color: @owRed;
     }
+    &.ngdialog-theme-default .ngdialog-content{
+        max-width:550px;
+    }
 }
 
-.pull-right{
-    float:right;
+.pull-right {
+    float: right;
 }

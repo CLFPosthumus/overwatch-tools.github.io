@@ -3,6 +3,21 @@
 @midPurple: #b4c2e3;
 @opponentListSize: 25rem;
 @mapListSize: 35rem;
-@footerHeight: 5rem;
+@footerHeight: 5.5rem;
 @headerHeight: 8rem;
 @logoHeight: 2.5rem;
+
+
+//for mobile
+
+@halfRecommendedLeft: @opponentListSize/2 + @mapListSize/2;
+@halfOpponentListSize: 45%;
+@halfMapListLeft: @halfOpponentListSize;
+@halfMapListSize: 55%;
+@logoHeightSmall: 4rem;
+@headerHeightSmall: @logoHeightSmall + 1rem;
+@selectListsHeight: 55%;
+@recommendationTop: @selectListsHeight;
+@halfScreenHeightWithFooter: ~"calc((100% - @{footerHeight} - @{headerHeightSmall})/3*1 + @{footerHeight})";
+
+@listSeparatorHeight: 1rem;

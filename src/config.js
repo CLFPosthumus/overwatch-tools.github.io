@@ -3,9 +3,11 @@ angular.module('overwatch-hero-picker').config(function ($httpProvider,ngDialogP
 
     ngDialogProvider.setDefaults({
         className: 'ngdialog-theme-default',
-        width: '50%',
+        width: '90%',
         closeByDocument: true,
-        closeByEscape: true
+        closeByEscape: true,
+        trapFocus:false
     });
+
 });
 
