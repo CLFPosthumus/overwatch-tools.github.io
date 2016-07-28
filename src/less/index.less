@@ -1,6 +1,9 @@
 @import "variables";
 @import "mixins";
 @import "player-hero-rating";
+@import "hero-list";
+@import "map-list";
+@import "hero";
 
 body, html {
     font-size: 85%;
@@ -161,26 +164,6 @@ header {
     }
 }
 
-.selected-heroes {
-    box-sizing: border-box;
-    .name {
-        margin-top: 0;
-    }
-    img {
-        max-width: 4vw;
-        display: block;
-    }
-    ul, li {
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-    }
-    li {
-        float: left;
-        padding-left: 10px;
-    }
-}
-
 .clearfix::after {
     content: "";
     display: block;
@@ -228,8 +211,8 @@ header {
     z-index: 2;
     box-sizing: border-box;
     padding: 1rem;
-    width: @opponentListSize;
-    right: -@opponentListSize;
+    width: @navListSize;
+    right: -@navListSize;
     background-color: #333;
     transition: right 350ms ease-in;
 
@@ -244,9 +227,6 @@ header {
     right: 1rem;
     z-index: 2;
 }
-
-@import "hero-list";
-@import "map-list";
 
 @media screen and (max-width: 1023px) {
 

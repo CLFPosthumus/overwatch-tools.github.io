@@ -4,12 +4,7 @@
     'disabled' : !$ctrl.selectedHeroes[hero.id] && $ctrl.maxReached
     }">
         <button ng-click="$ctrl.selectHero(hero)" href="javascript:void()">
-            <img ng-src="{{hero.avatar}}"/>
-            <div class="detail-wrapper">
-                <span class="name">
-                    {{hero.name}}
-                </span>
-            </div>
+            <ow-hero hero="hero"></ow-hero>
         </button>
     </li>
 </ul>

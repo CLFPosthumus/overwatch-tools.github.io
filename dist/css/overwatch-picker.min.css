@@ -47,6 +47,71 @@ ow-player-hero-rating .list li img {
 ow-player-hero-rating .list li input {
   display: block;
 }
+ow-player-hero-rating .list li .rating-display {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 3rem;
+}
+ow-hero-list {
+  display: block;
+  padding-left: 1rem;
+  left: 0;
+  box-sizing: border-box;
+  width: 25rem;
+}
+ow-hero-list ul,
+ow-hero-list li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+ow-hero-list li {
+  float: left;
+  padding-left: 10px;
+}
+ow-hero-list.player-heroes {
+  width: 25rem;
+}
+ow-hero-list.player-heroes .list ow-player-hero-rating {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+ow-hero-list.opponents {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 5.5rem - 8rem);
+  top: 8rem;
+}
+ow-map-list {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 5.5rem - 8rem);
+  top: 8rem;
+  width: 35rem;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  left: 25rem;
+}
+ow-map-list .modeO button {
+  color: #d60a3f;
+}
+ow-map-list .modeD button {
+  color: #1cfbfc;
+}
+ow-map-list .modeKOTH button {
+  color: #b4c2e3;
+}
+ow-hero .name {
+  margin-top: 0;
+}
+ow-hero img {
+  max-height: 100%;
+  display: block;
+}
 body,
 html {
   font-size: 85%;
@@ -212,26 +277,6 @@ header .header-title.recommended {
   color: white;
   text-align: left;
 }
-.selected-heroes {
-  box-sizing: border-box;
-}
-.selected-heroes .name {
-  margin-top: 0;
-}
-.selected-heroes img {
-  max-width: 4vw;
-  display: block;
-}
-.selected-heroes ul,
-.selected-heroes li {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-.selected-heroes li {
-  float: left;
-  padding-left: 10px;
-}
 .clearfix::after {
   content: "";
   display: block;
@@ -286,8 +331,8 @@ header .header-title.recommended {
   z-index: 2;
   box-sizing: border-box;
   padding: 1rem;
-  width: 25rem;
-  right: -25rem;
+  width: 18rem;
+  right: -18rem;
   background-color: #333;
   transition: right 350ms ease-in;
 }
@@ -299,50 +344,6 @@ header .header-title.recommended {
   top: 1rem;
   right: 1rem;
   z-index: 2;
-}
-ow-hero-list {
-  display: block;
-  padding-left: 1rem;
-  left: 0;
-  box-sizing: border-box;
-}
-ow-hero-list.player-heroes {
-  width: 25rem;
-}
-ow-hero-list.player-heroes .list ow-player-hero-rating {
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-ow-hero-list {
-  width: 25rem;
-}
-ow-hero-list.opponents {
-  position: fixed;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: calc(100% - 5.5rem - 8rem);
-  top: 8rem;
-}
-ow-map-list {
-  position: fixed;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: calc(100% - 5.5rem - 8rem);
-  top: 8rem;
-  width: 35rem;
-  box-sizing: border-box;
-  padding-left: 1rem;
-  left: 25rem;
-}
-ow-map-list .modeO button {
-  color: #d60a3f;
-}
-ow-map-list .modeD button {
-  color: #1cfbfc;
-}
-ow-map-list .modeKOTH button {
-  color: #b4c2e3;
 }
 @media screen and (max-width: 1023px) {
   body {
