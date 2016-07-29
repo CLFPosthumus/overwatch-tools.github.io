@@ -130,6 +130,9 @@ small {
 }
 button {
   cursor: pointer;
+  border: 1px solid #fa9c1e;
+  background: #ae6504;
+  color: white;
 }
 ul,
 li {
@@ -277,6 +280,17 @@ header .header-title.recommended {
   color: white;
   text-align: left;
 }
+button.clear {
+  height: 1.6rem;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  top: 33rem;
+  width: 100%;
+}
 .clearfix::after {
   content: "";
   display: block;
@@ -410,6 +424,10 @@ header .header-title.recommended {
     left: 45%;
     width: 35rem;
   }
+  ow-map-list button.clear {
+    left: 45%;
+    width: 55%;
+  }
   ow-hero-list {
     padding-left: 0;
   }
@@ -437,6 +455,12 @@ header .header-title.recommended {
     top: calc(55% - 1rem);
     left: 0;
     width: 25rem;
+  }
+  button.clear {
+    position: fixed;
+    height: 1rem;
+    width: 45%;
+    top: calc(55% - 1rem);
   }
   header {
     z-index: 2;
