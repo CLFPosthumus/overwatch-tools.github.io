@@ -238,7 +238,6 @@ header .header-title.recommended {
 .list li button {
   display: block;
   text-decoration: none;
-  color: white;
   height: 100%;
   width: 100%;
 }
