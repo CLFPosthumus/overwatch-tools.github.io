@@ -5,7 +5,8 @@
       "vendorJs": [
         "node_modules/angular/angular.min.js",
         "node_modules/ng-dialog/js/ngDialog.min.js",
-        "node_modules/angular-touch/angular-touch.min.js"
+        "node_modules/angular-touch/angular-touch.min.js",
+        "node_modules/engine.io-client/engine.io.js"
       ],
       "vendorCss": [
         "node_modules/ng-dialog/css/ngDialog.min.css",

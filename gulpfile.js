@@ -3,14 +3,23 @@ var $ = require('gulp-load-plugins')();
 var packageJSON =require('./package.json');
 var config = require('./gulp.config.json');
 var browserSync = require('browser-sync');
-
+var addStream = require('add-stream');
 
 function vendorsJs() {
     return gulp.src(config.paths.src.vendorJs)
         .pipe($.concat(config.packageName + '.vendors.min.js'))
         .pipe(gulp.dest(config.paths.dist.js));
 }
+
+function getEnvConfig(){
+    var configFile = './env/' + (process.env.NODE_ENV || 'production') + '.json';
+
+    return gulp.src(configFile)
+        .pipe($.ngConfig('overwatch-hero-picker.config'));
+}
+
 function app() {
+
     return gulp.src(config.paths.src.js)
         .pipe($.plumber())
        // .pipe($.eslint())
@@ -19,6 +28,8 @@ function app() {
         }))
         //.pipe($.ngAnnotate())
         .pipe($.angularEmbedTemplates())
+
+        .pipe(addStream.obj(getEnvConfig()))
         //.pipe($.uglify())
         .pipe($.concat(config.packageName + '.min.js'))
         .pipe(gulp.dest(config.paths.dist.js));
