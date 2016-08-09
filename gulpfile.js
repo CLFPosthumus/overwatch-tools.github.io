@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var packageJSON =require('./package.json');
+var packageJSON = require('./package.json');
 var config = require('./gulp.config.json');
 var browserSync = require('browser-sync');
 var addStream = require('add-stream');
@@ -11,18 +11,23 @@ function vendorsJs() {
         .pipe(gulp.dest(config.paths.dist.js));
 }
 
-function getEnvConfig(){
+function getEnvConfig() {
     var configFile = './env/' + (process.env.NODE_ENV || 'production') + '.json';
 
     return gulp.src(configFile)
         .pipe($.ngConfig('overwatch-hero-picker.config'));
 }
 
+function copyMedia() {
+    return gulp.src(config.paths.src.media)
+        .pipe(gulp.dest(config.paths.dist.media));
+}
+
 function app() {
 
     return gulp.src(config.paths.src.js)
         .pipe($.plumber())
-       // .pipe($.eslint())
+        // .pipe($.eslint())
         .pipe($.babel({
             presets: ['es2015']
         }))
@@ -41,7 +46,7 @@ function vendorsCss() {
 }
 function styles() {
     return gulp.src(config.paths.src.less)
-        .pipe($.plumber(function(err){
+        .pipe($.plumber(function (err) {
             console.error(err);
             this.emit('end');
         }))
@@ -56,7 +61,7 @@ function watch(cb) {
     gulp.watch(config.paths.src.index, buildIndexHtml);
     cb();
 }
-function buildIndexHtml(){
+function buildIndexHtml() {
     return gulp.src(config.paths.src.index)
         .pipe($.template({
             version: packageJSON.version
@@ -74,7 +79,7 @@ function serve(cb) {
     });
     cb();
 }
-gulp.task('default', gulp.series(vendorsJs,vendorsCss, app, styles, buildIndexHtml, watch, serve));
+gulp.task('default', gulp.series(vendorsJs, vendorsCss, copyMedia, app, styles, buildIndexHtml, watch, serve));
 
-gulp.task('dist', gulp.series(vendorsJs,vendorsCss, app, styles, buildIndexHtml));
+gulp.task('dist', gulp.series(vendorsJs, vendorsCss, copyMedia, app, styles, buildIndexHtml));
 
