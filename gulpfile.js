@@ -76,3 +76,5 @@ function serve(cb) {
 }
 gulp.task('default', gulp.series(vendorsJs,vendorsCss, app, styles, buildIndexHtml, watch, serve));
 
+gulp.task('dist', gulp.series(vendorsJs,vendorsCss, app, styles, buildIndexHtml));
+

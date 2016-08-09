@@ -1,25 +1,27 @@
 {
-  "name": "paquettea.github.io",
-  "version": "0.0.12",
-  "description": "Home page for Overwatch team matching",
+  "name": "overwatch-tools.github.io",
+  "version": "0.1.0",
+  "description": "Home page for Overwatch counter picker",
   "main": "index.html",
   "scripts": {
     "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paquettea/paquettea.github.io.git"
+    "url": "git+https://github.com/overwatch-tools/overwatch-tools.github.io.git"
   },
   "keywords": [
     "overwatch",
+    "blizzard",
+    "counter-picker",
     "matchmaking"
   ],
   "author": "Alexandre Paquette <alexandre.paquette@nadrox.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/paquettea/paquettea.github.io/issues"
+    "url": "https://github.com/overwatch-tools/overwatch-tools.github.io/issues"
   },
-  "homepage": "https://paquettea.github.io",
+  "homepage": "https://overwatch-tools.github.io",
   "devDependencies": {
     "add-stream": "^1.0.0",
     "angular-touch": "^1.5.8",
