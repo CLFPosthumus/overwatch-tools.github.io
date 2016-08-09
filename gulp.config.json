@@ -19,9 +19,7 @@
       "html": [
         "src/**/*.html"
       ],
-      "media": [
-        "src/media/**"
-      ],
+      "media": "src/media/**",
       "less": [
         "src/**/index.less"
       ],
