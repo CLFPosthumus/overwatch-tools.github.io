@@ -61,7 +61,7 @@ angular.module('overwatch-hero-picker').component('owHeroPicker', {
         };
 
         this.recommendedFilter = hero => {
-            return this.heroesLimit != minHeroShown || this.heroFinalScore[hero.id] >= 0;
+            return this.heroesLimit !== minHeroShown || this.heroFinalScore[hero.id] >= 0;
         };
         this.avoidFilter = hero => this.heroFinalScore[hero.id] > 0;
     }
