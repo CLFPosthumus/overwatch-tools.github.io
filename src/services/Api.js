@@ -1,3 +1,4 @@
+/* eslint-disable angular/deferred */
 angular.module('overwatch-hero-picker').service('Api', function Api($log, $rootScope, $q, WS_API) {
     let socket = new eio.Socket(WS_API, {
         transports: ['websocket']
@@ -5,7 +6,7 @@ angular.module('overwatch-hero-picker').service('Api', function Api($log, $rootS
     let topics = {};
 
     function readMessage(data) {
-        let dataObj = JSON.parse(data);
+        let dataObj = angular.fromJson(data);
 
         topics[dataObj.topic] = topics[dataObj.topic] || $q.defer();
 
@@ -22,3 +23,4 @@ angular.module('overwatch-hero-picker').service('Api', function Api($log, $rootS
         return topics[topic].promise;
     };
 });
+/* eslint-enable angular/deferred */

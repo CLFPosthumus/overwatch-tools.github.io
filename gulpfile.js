@@ -27,7 +27,8 @@ function app() {
 
     return gulp.src(config.paths.src.js)
         .pipe($.plumber())
-        // .pipe($.eslint())
+        .pipe($.eslint())
+        .pipe($.eslint.format())
         .pipe($.babel({
             presets: ['es2015']
         }))

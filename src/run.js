@@ -11,8 +11,7 @@ angular.module('overwatch-hero-picker').run(function (ngDialog, LocalStorageKeys
         if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement &&
             !doc.msFullscreenElement) {
             requestFullScreen.call(docEl);
-        }
-        else {
+        } else {
             cancelFullScreen.call(doc);
         }
         $document.off('touchstart', setFullScreen);
@@ -27,14 +26,15 @@ angular.module('overwatch-hero-picker').run(function (ngDialog, LocalStorageKeys
     }
 
     function isTouchSupported() {
-        var msTouchEnabled = window.navigator.msMaxTouchPoints;
-        var generalTouchEnabled = "ontouchstart" in document;
+        var msTouchEnabled = $window.navigator.msMaxTouchPoints;
+        var generalTouchEnabled = 'ontouchstart' in document;
 
         return msTouchEnabled || generalTouchEnabled;
     }
 
     if (isTouchSupported()) {
-        $templateCache.put('touchLayer', '<div ng-click="closeThisDialog()">Please touch to go full screen<br><small>(Drag from top to show address bar)</small></div>');
+        $templateCache.put('touchLayer', '<div ng-click="closeThisDialog()">' +
+            'Please touch to go full screen<br><small>(Drag from top to show address bar)</small></div>');
         $document.on('touchstart', setFullScreen);
         let dialog = ngDialog.open({
             template: 'touchLayer'

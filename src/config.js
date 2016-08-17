@@ -1,4 +1,4 @@
-angular.module('overwatch-hero-picker').config(function ($httpProvider,ngDialogProvider, $touchProvider) {
+angular.module('overwatch-hero-picker').config(function ($httpProvider, ngDialogProvider, $touchProvider) {
     $httpProvider.defaults.cache = true;
     $touchProvider.ngClickOverrideEnabled(true);
 
@@ -7,8 +7,7 @@ angular.module('overwatch-hero-picker').config(function ($httpProvider,ngDialogP
         width: '90%',
         closeByDocument: true,
         closeByEscape: true,
-        trapFocus:false
+        trapFocus: false
     });
-
 });
 
