@@ -1,3 +1,10 @@
 {
-  "extends": "videotron-angularjs"
+  "globals": {
+    "eio": false
+  },
+  "extends": "videotron-angularjs",
+  "rules": {
+    "angular/deferred": 2
+  }
+
 }

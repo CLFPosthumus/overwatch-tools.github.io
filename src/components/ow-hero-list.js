@@ -4,7 +4,7 @@ angular.module('overwatch-hero-picker').component('owHeroList', {
     },
     templateUrl: 'ow-hero-list.html',
 
-    controller: function (HeroesService, $scope) {
+    controller: function (HeroesService) {
 
      //   this.selectedHeroes = this.selectedHeroes || [];
 

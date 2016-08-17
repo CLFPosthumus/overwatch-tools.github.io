@@ -1,4 +1,4 @@
-angular.module('overwatch-hero-picker').service('HeroPickerService', function ($q, HeroesService) {
+angular.module('overwatch-hero-picker').service('HeroPickerService', function HeroPickerService($q, HeroesService) {
 
     this.getRecommendedHero = (opposingHeroes, map, heroesRating) => $q.all({
         heroes: HeroesService.getHeroes(),
@@ -9,7 +9,6 @@ angular.module('overwatch-hero-picker').service('HeroPickerService', function ($
         let finalRating = {};
         let nbOpponent = Object.keys(opposingHeroes).length;
 
-        //(Hero1+Hero2+Hero3+Hero4+Hero5+Hero6+(MapRating x opposingHeroesCount *.4)) x PlayerRating
         for (let pickHeroId in result.matching) {
             if (result.matching.hasOwnProperty(pickHeroId)) {
                 recommendedCounterByHero[pickHeroId] = 0;
@@ -25,17 +24,16 @@ angular.module('overwatch-hero-picker').service('HeroPickerService', function ($
                 } else {
                     recommendedByMap[pickHeroId] = 0;
                 }
+
                 finalRating[pickHeroId] =
                     recommendedByMap[pickHeroId] * 0.4 +
                     heroesRating[pickHeroId] * 0.6;
 
-                if (nbOpponent !== 0){
+                if (nbOpponent !== 0) {
                     finalRating[pickHeroId] += recommendedCounterByHero[pickHeroId] / nbOpponent * -1;
                 }
             }
         }
-
-
 
         return {
             heroCounterRating: recommendedCounterByHero,
