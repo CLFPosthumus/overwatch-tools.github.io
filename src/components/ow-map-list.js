@@ -8,17 +8,17 @@ angular.module('overwatch-hero-picker').component('owMapList', {
         this.selectedMap = null;
         this.mapModes = MapModes;
         MapsService.getMaps().then(maps => {
-            this.maps = maps.sort(function (a, b) {
-                if (a.mode === 'KOTH' && b.mode !== 'KOTH') {
+            this.mapsGroups = maps.groups.sort(function (a, b) {
+                if (a.type === 'KOTH' && b.type !== 'KOTH') {
                     return 1;
                 }
-                if (b.mode === 'KOTH' && a.mode !== 'KOTH') {
+                if (b.type === 'KOTH' && a.type !== 'KOTH') {
                     return -1;
                 }
-                if (a.id > b.id) {
+                if (a.name > b.name) {
                     return 1;
                 }
-                if (a.id < b.id) {
+                if (a.name < b.name) {
                     return -1;
                 }
                 return 0;

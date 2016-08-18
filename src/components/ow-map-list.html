@@ -3,16 +3,20 @@
        <!--placeholder="find a hero by name, type or description">-->
 
 <ul class="list">
-    <li ng-repeat="map in $ctrl.maps" class="{{'mode' + map.mode}}" ng-class="{
-    'selected': $ctrl.selectedMap === map,
-    'disabled' : $ctrl.selectedMap !== null && map !== $ctrl.selectedMap
-    }">
-        <button ng-click="$ctrl.selectMap(map)" >
-            <img ng-src="{{map.image}}"/>
-            <div class="detail-wrapper">
-                <span class="name">{{map.name}}</span>
-            </div>
-        </button>
+    <li ng-repeat="mapGroup in $ctrl.mapsGroups">
+        <div class="button-group">
+            <button ng-repeat="map in mapGroup.modes"
+                    ng-class="{
+                    'selected': $ctrl.selectedMap === map,
+                    'disabled' : $ctrl.selectedMap !== null && map !== $ctrl.selectedMap}"
+                    class="{{'mode' + map.mode}}"
+                    ng-click="$ctrl.selectMap(map)"
+                    ng-style="{'background-image': 'url({{ mapGroup.image }})' }">
+            </button>
+        </div>
+        <div class="detail-wrapper">
+            <span class="name">{{mapGroup.name}}</span>
+        </div>
     </li>
 </ul>
 <button class="clear" ng-click="$ctrl.selectedMap = null">Reset</button>

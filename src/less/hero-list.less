@@ -13,9 +13,28 @@ ow-hero-list {
         list-style-type: none;
     }
     li {
+        height: 3rem;
+        width: 50%;
         float: left;
-        padding-left: 10px;
+
+        button {
+            display: block;
+            text-decoration: none;
+            height: 100%;
+            width: 100%;
+        }
+        img {
+            float: left;
+            height: inherit;
+            vertical-align: middle;
+        }
+        .detail-wrapper {
+            display: inline-block;
+            padding-left: 1rem;
+            vertical-align: middle;
+        }
     }
+
     width: @opponentListSize;
 }
 
