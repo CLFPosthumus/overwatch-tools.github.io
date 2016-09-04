@@ -1,6 +1,6 @@
 {
   "name": "overwatch-tools.github.io",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Home page for Overwatch counter picker",
   "main": "index.html",
   "scripts": {
