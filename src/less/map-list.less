@@ -26,5 +26,16 @@ ow-map-list {
             color: @midPurple;
         }
     }
+    button.clear{
+        top:@headerHeight + @mapListHeightSize;
+    }
+}
+@media screen and (max-width: 1023px) {
+    ow-map-list{
+        button.clear{
+            top: ~"calc(@{recommendationTop} - 1rem)";
+        }
+    }
 
 }
+
