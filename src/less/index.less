@@ -173,7 +173,7 @@ button.clear{
     margin: 0;
     padding: 0;
     text-align: center;
-    top:@headerHeight + @opponentListSize;
+    top:@headerHeight + @mapListHeightSize;
     width:100%;
 
 }
@@ -376,11 +376,20 @@ button.clear{
 
 
 .ngdialog {
+    h1 small{
+        font-size:.8em;
+    }
     a {
         color: @owRed;
     }
     &.ngdialog-theme-default .ngdialog-content{
         max-width:550px;
+    }
+    .new{
+        color: @owRed;
+    }
+    .new-text{
+        color: darken(@owRed, 20%);
     }
 }
 
