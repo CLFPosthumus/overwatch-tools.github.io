@@ -5,30 +5,8 @@
     "avatar": "https://blzgdapipro-a.akamaihd.net/game/heroes/0x02E000000000013B.png",
     "type": "support",
     "difficulty": 3,
-    "description": "Female Snake",
-    "abilities": [
-      {
-        "isActive": true,
-        "isToggled": false,
-        "name": "Biotic Rifle",
-        "type": "weaponPrimary"
-      }, {
-        "isActive": true,
-        "isToggled": false,
-        "name": "Sleep Dart",
-        "type": "skill1"
-      }, {
-        "isActive": true,
-        "isToggled": false,
-        "name": "Biotic Grenade",
-        "type": "skill2"
-      }, {
-        "isActive": true,
-        "isToggled": false,
-        "name": "Nano Boost",
-        "type": "ultimate"
-      }
-    ]
+    "description": "Female Snake"
+    
   },
   {
     "id": "bas",
